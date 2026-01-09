@@ -44,21 +44,24 @@ print(result.output)
 
 ### Environment Variables
 
-All settings use the `AGENT_` prefix:
+All settings use the `AGENTS_` prefix. Variables can be set in:
+- Environment variables
+- `.env` file (project-specific)
+- `~/agents.env` (user-wide defaults)
 
 ```bash
 # Model configuration
-AGENT_MODEL_BACKEND__MODEL=gpt-4o
-AGENT_MODEL_BACKEND__API_KEY=sk-...
-AGENT_MODEL_BACKEND__BASE_URL=https://api.openai.com/v1
+AGENTS_MODEL_BACKEND__MODEL=gpt-4o
+AGENTS_MODEL_BACKEND__API_KEY=sk-...
+AGENTS_MODEL_BACKEND__BASE_URL=https://api.openai.com/v1
 
 # Logging
-AGENT_LOGGING__LEVEL=INFO
-AGENT_LOGGING__FORMAT=json
+AGENTS_LOGGING__LEVEL=INFO
+AGENTS_LOGGING__FORMAT=json
 
 # Retry behavior
-AGENT_RETRY__MAX_RETRIES=3
-AGENT_RETRY__RETRY_LEVEL=2
+AGENTS_RETRY__MAX_RETRIES=3
+AGENTS_RETRY__RETRY_LEVEL=2
 ```
 
 ### TOML Configuration

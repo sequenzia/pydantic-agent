@@ -95,11 +95,11 @@ def mock_env(monkeypatch: pytest.MonkeyPatch) -> dict[str, str]:
     Returns the dict of set variables for assertions.
     """
     env_vars = {
-        "AGENT_MODEL_BACKEND__BASE_URL": "http://test:8080/v1",
-        "AGENT_MODEL_BACKEND__MODEL": "test-model",
-        "AGENT_MODEL_BACKEND__API_KEY": "test-api-key",
-        "AGENT_LOGGING__LEVEL": "DEBUG",
-        "AGENT_RETRY__RETRY_LEVEL": "3",
+        "AGENTS_MODEL_BACKEND__BASE_URL": "http://test:8080/v1",
+        "AGENTS_MODEL_BACKEND__MODEL": "test-model",
+        "AGENTS_MODEL_BACKEND__API_KEY": "test-api-key",
+        "AGENTS_LOGGING__LEVEL": "DEBUG",
+        "AGENTS_RETRY__RETRY_LEVEL": "3",
     }
     for key, value in env_vars.items():
         monkeypatch.setenv(key, value)

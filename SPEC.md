@@ -499,21 +499,22 @@ Configuration values are loaded from multiple sources in the following priority 
 | Priority | Source | Description |
 |----------|--------|-------------|
 | 1 | Constructor arguments | Explicitly passed values |
-| 2 | Environment variables | `AGENT_` prefixed variables |
-| 3 | `.env` file | Local environment file |
-| 4 | `config.toml` / `config.yaml` | Project configuration file |
-| 5 | Default values | Defined in settings models |
+| 2 | Environment variables | `AGENTS_` prefixed variables |
+| 3 | `.env` file | Project-specific environment file |
+| 4 | `~/agents.env` file | User-wide defaults |
+| 5 | `config.toml` / `config.yaml` | Project configuration file |
+| 6 | Default values | Defined in settings models |
 
 #### 6.4.2 Environment Variable Mapping
 
-All settings support environment variable configuration with the `AGENT_` prefix:
+All settings support environment variable configuration with the `AGENTS_` prefix:
 
 | Setting | Environment Variable | Example |
 |---------|---------------------|---------|
-| `model_backend.base_url` | `AGENT_MODEL_BACKEND__BASE_URL` | `http://localhost:11434/v1` |
-| `model_backend.api_key` | `AGENT_MODEL_BACKEND__API_KEY` | `sk-...` |
-| `logging.level` | `AGENT_LOGGING__LEVEL` | `DEBUG` |
-| `retry.max_attempts` | `AGENT_RETRY__MAX_ATTEMPTS` | `3` |
+| `model_backend.base_url` | `AGENTS_MODEL_BACKEND__BASE_URL` | `http://localhost:11434/v1` |
+| `model_backend.api_key` | `AGENTS_MODEL_BACKEND__API_KEY` | `sk-...` |
+| `logging.level` | `AGENTS_LOGGING__LEVEL` | `DEBUG` |
+| `retry.max_attempts` | `AGENTS_RETRY__MAX_ATTEMPTS` | `3` |
 
 Note: Nested settings use double underscore (`__`) as separator.
 
@@ -527,9 +528,9 @@ class AgentSettings(BaseSettings):
     """Root configuration for the agent framework."""
     
     model_config = SettingsConfigDict(
-        env_prefix="AGENT_",
+        env_prefix="AGENTS_",
         env_nested_delimiter="__",
-        env_file=".env",
+        env_file=(".env", Path.home() / "agents.env"),
         env_file_encoding="utf-8",
         toml_file="config.toml",
         extra="ignore",

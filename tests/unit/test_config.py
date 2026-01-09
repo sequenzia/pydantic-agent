@@ -67,9 +67,9 @@ class TestModelBackendSettings:
 
     def test_from_env_variables(self, monkeypatch: pytest.MonkeyPatch) -> None:
         """Test loading from environment variables."""
-        monkeypatch.setenv("AGENT_MODEL_BACKEND__BASE_URL", "http://env:9000/v1")
-        monkeypatch.setenv("AGENT_MODEL_BACKEND__MODEL", "env-model")
-        monkeypatch.setenv("AGENT_MODEL_BACKEND__API_KEY", "env-key")
+        monkeypatch.setenv("AGENTS_MODEL_BACKEND__BASE_URL", "http://env:9000/v1")
+        monkeypatch.setenv("AGENTS_MODEL_BACKEND__MODEL", "env-model")
+        monkeypatch.setenv("AGENTS_MODEL_BACKEND__API_KEY", "env-key")
 
         # Need to instantiate via AgentSettings for env prefix to work
         settings = AgentSettings()
@@ -235,9 +235,9 @@ class TestAgentSettings:
         """Test loading nested settings from environment variables."""
         # Change to a temp directory to avoid loading any existing config files
         monkeypatch.chdir(tmp_path)
-        monkeypatch.setenv("AGENT_MODEL_BACKEND__BASE_URL", "http://nested:8080/v1")
-        monkeypatch.setenv("AGENT_LOGGING__LEVEL", "DEBUG")
-        monkeypatch.setenv("AGENT_RETRY__RETRY_LEVEL", "3")
+        monkeypatch.setenv("AGENTS_MODEL_BACKEND__BASE_URL", "http://nested:8080/v1")
+        monkeypatch.setenv("AGENTS_LOGGING__LEVEL", "DEBUG")
+        monkeypatch.setenv("AGENTS_RETRY__RETRY_LEVEL", "3")
 
         settings = AgentSettings(_env_file=None)
 
@@ -262,7 +262,7 @@ class TestAgentSettings:
     ) -> None:
         """Test that environment variables override file configuration."""
         monkeypatch.chdir(config_toml_file.parent)
-        monkeypatch.setenv("AGENT_LOGGING__LEVEL", "ERROR")
+        monkeypatch.setenv("AGENTS_LOGGING__LEVEL", "ERROR")
 
         settings = AgentSettings(_env_file=None)
 

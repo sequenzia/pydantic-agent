@@ -25,14 +25,15 @@ class AgentSettings(BaseSettings):
 
     Configuration is loaded from multiple sources in priority order:
     1. Constructor arguments (highest priority)
-    2. Environment variables (AGENT_ prefix)
-    3. .env file
-    4. config.toml file
-    5. Default values (lowest priority)
+    2. Environment variables (AGENTS_ prefix)
+    3. .env file (project-specific)
+    4. ~/agents.env file (user-wide defaults)
+    5. config.toml file
+    6. Default values (lowest priority)
 
     Environment variables use double underscore for nesting:
-    - AGENT_MODEL_BACKEND__BASE_URL -> model_backend.base_url
-    - AGENT_LOGGING__LEVEL -> logging.level
+    - AGENTS_MODEL_BACKEND__BASE_URL -> model_backend.base_url
+    - AGENTS_LOGGING__LEVEL -> logging.level
 
     Attributes:
         model_backend: Model backend connection settings.
@@ -43,9 +44,9 @@ class AgentSettings(BaseSettings):
     """
 
     model_config = SettingsConfigDict(
-        env_prefix="AGENT_",
+        env_prefix="AGENTS_",
         env_nested_delimiter="__",
-        env_file=".env",
+        env_file=(".env", Path.home() / "agents.env"),
         env_file_encoding="utf-8",
         toml_file="config.toml",
         extra="ignore",

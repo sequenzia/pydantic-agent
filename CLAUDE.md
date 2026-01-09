@@ -88,14 +88,19 @@ from pydantic_agent.backends import create_ollama_backend, create_vllm_backend
 
 ## Configuration System
 
-Settings use the `AGENT_` prefix with nested settings using double underscore (`__`):
+Settings use the `AGENTS_` prefix with nested settings using double underscore (`__`):
 
 ```bash
-AGENT_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
-AGENT_MODEL_BACKEND__MODEL=llama3.2
-AGENT_LOGGING__LEVEL=DEBUG
-AGENT_RETRY__RETRY_LEVEL=2
+AGENTS_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
+AGENTS_MODEL_BACKEND__MODEL=llama3.2
+AGENTS_LOGGING__LEVEL=DEBUG
+AGENTS_RETRY__RETRY_LEVEL=2
 ```
+
+Variables are loaded from (in priority order):
+1. Environment variables
+2. `.env` file (project-specific)
+3. `~/agents.env` (user-wide defaults)
 
 Configuration sources (priority order):
 1. Constructor arguments

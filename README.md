@@ -95,24 +95,52 @@ target_tokens = 80000
 
 ## Built-in Tools
 
-### Filesystem Tools
+| Tool | Description |
+|------|-------------|
+| `read_file` | Read contents of a file |
+| `write_file` | Write or overwrite a file |
+| `append_file` | Append content to a file |
+| `list_directory` | List contents of a directory with metadata |
+| `file_info` | Get file or directory metadata (size, modified, created) |
+| `delete_file` | Delete a file |
+| `move_file` | Move or rename a file |
+| `copy_file` | Copy a file |
+| `glob_search` | Find files matching a glob pattern (e.g., `**/*.py`) |
+| `grep_search` | Search file contents for a pattern with context lines |
+| `run_bash` | Execute a shell command with timeout support |
+
+### Usage Examples
 
 ```python
-from pydantic_agent.tools.filesystem import (
-    read_file,
-    write_file,
-    append_file,
-    list_directory,
-    file_info,
-    delete_file,
-    move_file,
-    copy_file,
+from pydantic_agent.tools import (
+    read_file, write_file, list_directory,
+    glob_search, grep_search, run_bash,
 )
 
-# Tools are automatically registered when using the agent
-agent = Agent(model="gpt-4o")
+# File operations
+content = read_file("config.json")
+write_file("output.txt", "Hello, World!")
+entries = list_directory("/project", recursive=True)
 
-# With security sandbox
+# Search for files by pattern
+py_files = glob_search("**/*.py", root_dir="/project")
+
+# Search file contents
+matches = grep_search(
+    pattern=r"def \w+",
+    path="/project",
+    file_pattern="*.py",
+    context_lines=2,
+)
+
+# Run shell commands
+result = run_bash("ls -la", timeout=30)
+print(result.stdout)
+```
+
+### Security Sandbox
+
+```python
 from pydantic_agent.tools.filesystem import FilesystemSecurity
 
 security = FilesystemSecurity(
@@ -120,35 +148,9 @@ security = FilesystemSecurity(
     base_directory="/safe/path",
     allowed_extensions=[".txt", ".json", ".py"],
 )
-```
 
-### Glob and Grep
-
-```python
-from pydantic_agent.tools import glob_search, grep_search
-
-# Search for files
-files = await glob_search("**/*.py", base_path="/project")
-
-# Search file contents
-matches = await grep_search(
-    pattern=r"def \w+",
-    path="/project",
-    file_pattern="*.py",
-    max_results=100,
-)
-```
-
-### Bash Tool
-
-```python
-from pydantic_agent.tools import run_bash
-
-result = await run_bash(
-    command="ls -la",
-    timeout=30.0,
-    allowed_commands=["ls", "cat", "echo"],
-)
+# Pass security context to tools
+content = read_file("data.txt", security=security)
 ```
 
 ## MCP Integration

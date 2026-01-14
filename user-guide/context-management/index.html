@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A simple, extensible AI Agent framework built on pydantic-ai">
+        <meta name="description" content="Mamba Agents - A simple, extensible AI Agent framework built on pydantic-ai">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Context Management - Pydantic Agent</title>
+        <title>Context Management - Mamba Agents</title>
       
     
     
@@ -102,7 +102,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Pydantic Agent" class="md-header__button md-logo" aria-label="Pydantic Agent" data-md-component="logo">
+    <a href="../.." title="Mamba Agents" class="md-header__button md-logo" aria-label="Mamba Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Pydantic Agent
+            Mamba Agents
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -420,13 +420,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Pydantic Agent" class="md-nav__button md-logo" aria-label="Pydantic Agent" data-md-component="logo">
+    <a href="../.." title="Mamba Agents" class="md-nav__button md-logo" aria-label="Mamba Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Pydantic Agent
+    Mamba Agents
   </label>
   
     <div class="md-nav__source">
@@ -3887,7 +3887,7 @@
 
 
 <h1 id="context-management">Context Management<a class="headerlink" href="#context-management" title="Permanent link">&para;</a></h1>
-<p>Pydantic Agent automatically tracks conversation context and provides strategies to manage long conversations.</p>
+<p>Mamba Agents automatically tracks conversation context and provides strategies to manage long conversations.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>As conversations grow, the context window can exceed model limits. The context management system:</p>
 <ol>
@@ -3898,7 +3898,7 @@
 </ol>
 <h2 id="built-in-agent-context">Built-in Agent Context<a class="headerlink" href="#built-in-agent-context" title="Permanent link">&para;</a></h2>
 <p>Context tracking is enabled by default:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
@@ -3929,7 +3929,7 @@
 </span></code></pre></div>
 <h3 id="auto-compaction">Auto-compaction<a class="headerlink" href="#auto-compaction" title="Permanent link">&para;</a></h3>
 <p>By default, context is automatically compacted when thresholds are reached:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">AgentConfig</span><span class="p">,</span> <span class="n">CompactionConfig</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">AgentConfig</span><span class="p">,</span> <span class="n">CompactionConfig</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">config</span> <span class="o">=</span> <span class="n">AgentConfig</span><span class="p">(</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">auto_compact</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Enabled by default</span>
@@ -4045,7 +4045,7 @@
 </table>
 <h2 id="standalone-context-manager">Standalone Context Manager<a class="headerlink" href="#standalone-context-manager" title="Permanent link">&para;</a></h2>
 <p>For advanced use cases, use ContextManager directly:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent.context</span><span class="w"> </span><span class="kn">import</span> <span class="n">ContextManager</span><span class="p">,</span> <span class="n">CompactionConfig</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents.context</span><span class="w"> </span><span class="kn">import</span> <span class="n">ContextManager</span><span class="p">,</span> <span class="n">CompactionConfig</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Create manager with config</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">config</span> <span class="o">=</span> <span class="n">CompactionConfig</span><span class="p">(</span>

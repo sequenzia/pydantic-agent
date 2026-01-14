@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A simple, extensible AI Agent framework built on pydantic-ai">
+        <meta name="description" content="Mamba Agents - A simple, extensible AI Agent framework built on pydantic-ai">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>ModelProfile - Pydantic Agent</title>
+        <title>ModelProfile - Mamba Agents</title>
       
     
     
@@ -102,7 +102,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Pydantic Agent" class="md-header__button md-logo" aria-label="Pydantic Agent" data-md-component="logo">
+    <a href="../../.." title="Mamba Agents" class="md-header__button md-logo" aria-label="Mamba Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Pydantic Agent
+            Mamba Agents
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -420,13 +420,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Pydantic Agent" class="md-nav__button md-logo" aria-label="Pydantic Agent" data-md-component="logo">
+    <a href="../../.." title="Mamba Agents" class="md-nav__button md-logo" aria-label="Mamba Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Pydantic Agent
+    Mamba Agents
   </label>
   
     <div class="md-nav__source">
@@ -2920,7 +2920,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydantic_agent.backends.profiles.ModelProfile" class="md-nav__link">
+  <a href="#mamba_agents.backends.profiles.ModelProfile" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ModelProfile
@@ -2931,7 +2931,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydantic_agent.backends.profiles.get_profile" class="md-nav__link">
+  <a href="#mamba_agents.backends.profiles.get_profile" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_profile
@@ -3419,7 +3419,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydantic_agent.backends.profiles.ModelProfile" class="md-nav__link">
+  <a href="#mamba_agents.backends.profiles.ModelProfile" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ModelProfile
@@ -3430,7 +3430,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pydantic_agent.backends.profiles.get_profile" class="md-nav__link">
+  <a href="#mamba_agents.backends.profiles.get_profile" class="md-nav__link">
     <span class="md-ellipsis">
       
         <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;get_profile
@@ -3463,7 +3463,7 @@
 <h1 id="modelprofile">ModelProfile<a class="headerlink" href="#modelprofile" title="Permanent link">&para;</a></h1>
 <p>Model capability information.</p>
 <h2 id="quick-example">Quick Example<a class="headerlink" href="#quick-example" title="Permanent link">&para;</a></h2>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent.backends</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_profile</span><span class="p">,</span> <span class="n">ModelProfile</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents.backends</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_profile</span><span class="p">,</span> <span class="n">ModelProfile</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Get profile</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">profile</span> <span class="o">=</span> <span class="n">get_profile</span><span class="p">(</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>
@@ -3536,7 +3536,7 @@
 
 
 
-<h2 id="pydantic_agent.backends.profiles.ModelProfile" class="doc doc-heading">
+<h2 id="mamba_agents.backends.profiles.ModelProfile" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">ModelProfile</span>
 
 
@@ -3544,7 +3544,7 @@
       <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
   </span>
 
-<a href="#pydantic_agent.backends.profiles.ModelProfile" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#mamba_agents.backends.profiles.ModelProfile" class="headerlink" title="Permanent link">&para;</a></h2>
 <div class="language-python doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">ModelProfile</span><span class="p">(</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="n"><span title="str">str</span></span><span class="p">,</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">provider</span><span class="p">:</span> <span class="n"><span title="str">str</span></span><span class="p">,</span>
@@ -3576,7 +3576,7 @@
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code><span title="pydantic_agent.backends.profiles.ModelProfile.name">name</span></code></td>
+            <td><code><span title="mamba_agents.backends.profiles.ModelProfile.name">name</span></code></td>
             <td class="doc-attribute-details">
               <div class="doc-md-description">
                 <p>Model identifier.</p>
@@ -3590,7 +3590,7 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="pydantic_agent.backends.profiles.ModelProfile.provider">provider</span></code></td>
+            <td><code><span title="mamba_agents.backends.profiles.ModelProfile.provider">provider</span></code></td>
             <td class="doc-attribute-details">
               <div class="doc-md-description">
                 <p>Provider name (openai, anthropic, ollama, etc.).</p>
@@ -3604,7 +3604,7 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="pydantic_agent.backends.profiles.ModelProfile.context_window">context_window</span></code></td>
+            <td><code><span title="mamba_agents.backends.profiles.ModelProfile.context_window">context_window</span></code></td>
             <td class="doc-attribute-details">
               <div class="doc-md-description">
                 <p>Maximum context window size.</p>
@@ -3618,7 +3618,7 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="pydantic_agent.backends.profiles.ModelProfile.max_output_tokens">max_output_tokens</span></code></td>
+            <td><code><span title="mamba_agents.backends.profiles.ModelProfile.max_output_tokens">max_output_tokens</span></code></td>
             <td class="doc-attribute-details">
               <div class="doc-md-description">
                 <p>Maximum output tokens.</p>
@@ -3632,7 +3632,7 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="pydantic_agent.backends.profiles.ModelProfile.supports_tools">supports_tools</span></code></td>
+            <td><code><span title="mamba_agents.backends.profiles.ModelProfile.supports_tools">supports_tools</span></code></td>
             <td class="doc-attribute-details">
               <div class="doc-md-description">
                 <p>Whether the model supports tool calling.</p>
@@ -3646,7 +3646,7 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="pydantic_agent.backends.profiles.ModelProfile.supports_vision">supports_vision</span></code></td>
+            <td><code><span title="mamba_agents.backends.profiles.ModelProfile.supports_vision">supports_vision</span></code></td>
             <td class="doc-attribute-details">
               <div class="doc-md-description">
                 <p>Whether the model supports images.</p>
@@ -3660,7 +3660,7 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="pydantic_agent.backends.profiles.ModelProfile.supports_streaming">supports_streaming</span></code></td>
+            <td><code><span title="mamba_agents.backends.profiles.ModelProfile.supports_streaming">supports_streaming</span></code></td>
             <td class="doc-attribute-details">
               <div class="doc-md-description">
                 <p>Whether streaming is supported.</p>
@@ -3674,7 +3674,7 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="pydantic_agent.backends.profiles.ModelProfile.default_temperature">default_temperature</span></code></td>
+            <td><code><span title="mamba_agents.backends.profiles.ModelProfile.default_temperature">default_temperature</span></code></td>
             <td class="doc-attribute-details">
               <div class="doc-md-description">
                 <p>Default temperature setting.</p>
@@ -3688,7 +3688,7 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="pydantic_agent.backends.profiles.ModelProfile.cost_per_1k_input">cost_per_1k_input</span></code></td>
+            <td><code><span title="mamba_agents.backends.profiles.ModelProfile.cost_per_1k_input">cost_per_1k_input</span></code></td>
             <td class="doc-attribute-details">
               <div class="doc-md-description">
                 <p>Cost per 1000 input tokens (USD).</p>
@@ -3702,7 +3702,7 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="pydantic_agent.backends.profiles.ModelProfile.cost_per_1k_output">cost_per_1k_output</span></code></td>
+            <td><code><span title="mamba_agents.backends.profiles.ModelProfile.cost_per_1k_output">cost_per_1k_output</span></code></td>
             <td class="doc-attribute-details">
               <div class="doc-md-description">
                 <p>Cost per 1000 output tokens (USD).</p>
@@ -3716,7 +3716,7 @@
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code><span title="pydantic_agent.backends.profiles.ModelProfile.extra">extra</span></code></td>
+            <td><code><span title="mamba_agents.backends.profiles.ModelProfile.extra">extra</span></code></td>
             <td class="doc-attribute-details">
               <div class="doc-md-description">
                 <p>Additional provider-specific settings.</p>
@@ -3764,17 +3764,17 @@
 <div class="doc doc-object doc-function">
 
 
-<h2 id="pydantic_agent.backends.profiles.get_profile" class="doc doc-heading">
+<h2 id="mamba_agents.backends.profiles.get_profile" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <span class="doc doc-object-name doc-function-name">get_profile</span>
 
 
-<a href="#pydantic_agent.backends.profiles.get_profile" class="headerlink" title="Permanent link">&para;</a></h2>
+<a href="#mamba_agents.backends.profiles.get_profile" class="headerlink" title="Permanent link">&para;</a></h2>
 <div class="language-python doc-signature highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">get_profile</span><span class="p">(</span><span class="n">model_name</span><span class="p">:</span> <span class="n"><span title="str">str</span></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n"><a class="autorefs autorefs-internal" title="            ModelProfile
 
 
   
       dataclass
-   (pydantic_agent.backends.profiles.ModelProfile)" href="#pydantic_agent.backends.profiles.ModelProfile">ModelProfile</a></span>
+   (mamba_agents.backends.profiles.ModelProfile)" href="#mamba_agents.backends.profiles.ModelProfile">ModelProfile</a></span>
 </span></code></pre></div>
 
     <div class="doc doc-contents first">
@@ -3826,7 +3826,7 @@
 
   
       dataclass
-   (pydantic_agent.backends.profiles.ModelProfile)" href="#pydantic_agent.backends.profiles.ModelProfile">ModelProfile</a></code>
+   (mamba_agents.backends.profiles.ModelProfile)" href="#mamba_agents.backends.profiles.ModelProfile">ModelProfile</a></code>
                 </span>
             </td>
             <td class="doc-returns-details">
@@ -3840,7 +3840,7 @@
 
 
             <details class="mkdocstrings-source">
-              <summary>Source code in <code>src/pydantic_agent/backends/profiles.py</code></summary>
+              <summary>Source code in <code>src/mamba_agents/backends/profiles.py</code></summary>
               <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-167">167</a></span>
 <span class="normal"><a href="#__codelineno-0-168">168</a></span>
 <span class="normal"><a href="#__codelineno-0-169">169</a></span>

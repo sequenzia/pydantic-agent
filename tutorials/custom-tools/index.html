@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A simple, extensible AI Agent framework built on pydantic-ai">
+        <meta name="description" content="Mamba Agents - A simple, extensible AI Agent framework built on pydantic-ai">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Creating Custom Tools - Pydantic Agent</title>
+        <title>Creating Custom Tools - Mamba Agents</title>
       
     
     
@@ -102,7 +102,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Pydantic Agent" class="md-header__button md-logo" aria-label="Pydantic Agent" data-md-component="logo">
+    <a href="../.." title="Mamba Agents" class="md-header__button md-logo" aria-label="Mamba Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Pydantic Agent
+            Mamba Agents
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -420,13 +420,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Pydantic Agent" class="md-nav__button md-logo" aria-label="Pydantic Agent" data-md-component="logo">
+    <a href="../.." title="Mamba Agents" class="md-nav__button md-logo" aria-label="Mamba Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Pydantic Agent
+    Mamba Agents
   </label>
   
     <div class="md-nav__source">
@@ -3607,7 +3607,7 @@
 
 
 <h1 id="creating-custom-tools">Creating Custom Tools<a class="headerlink" href="#creating-custom-tools" title="Permanent link">&para;</a></h1>
-<p>Learn how to create, test, and register custom tools for your Pydantic Agent.</p>
+<p>Learn how to create, test, and register custom tools for your Mamba Agents.</p>
 <h2 id="what-youll-learn">What You'll Learn<a class="headerlink" href="#what-youll-learn" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Create tools using decorators</li>
@@ -3618,12 +3618,12 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Python 3.12+</li>
-<li>Pydantic Agent installed</li>
+<li>Mamba Agents installed</li>
 <li>Basic understanding of type hints</li>
 </ul>
 <h2 id="step-1-simple-tool-with-decorator">Step 1: Simple Tool with Decorator<a class="headerlink" href="#step-1-simple-tool-with-decorator" title="Permanent link">&para;</a></h2>
 <p>The simplest way to create a tool is with the <code>@agent.tool</code> decorator:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
@@ -3780,7 +3780,7 @@
 <p>Here's a complete example with multiple tools:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">AgentConfig</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">AgentConfig</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># Create agent</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>

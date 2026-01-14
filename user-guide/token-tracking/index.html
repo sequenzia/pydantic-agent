@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A simple, extensible AI Agent framework built on pydantic-ai">
+        <meta name="description" content="Mamba Agents - A simple, extensible AI Agent framework built on pydantic-ai">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Token Tracking - Pydantic Agent</title>
+        <title>Token Tracking - Mamba Agents</title>
       
     
     
@@ -102,7 +102,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Pydantic Agent" class="md-header__button md-logo" aria-label="Pydantic Agent" data-md-component="logo">
+    <a href="../.." title="Mamba Agents" class="md-header__button md-logo" aria-label="Mamba Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Pydantic Agent
+            Mamba Agents
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -420,13 +420,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Pydantic Agent" class="md-nav__button md-logo" aria-label="Pydantic Agent" data-md-component="logo">
+    <a href="../.." title="Mamba Agents" class="md-nav__button md-logo" aria-label="Mamba Agents" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Pydantic Agent
+    Mamba Agents
   </label>
   
     <div class="md-nav__source">
@@ -3831,7 +3831,7 @@
 
 
 <h1 id="token-tracking">Token Tracking<a class="headerlink" href="#token-tracking" title="Permanent link">&para;</a></h1>
-<p>Pydantic Agent automatically tracks token usage and estimates costs across all agent runs.</p>
+<p>Mamba Agents automatically tracks token usage and estimates costs across all agent runs.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Every time you run an agent, token usage is recorded:</p>
 <ul>
@@ -3842,7 +3842,7 @@
 </ul>
 <h2 id="built-in-tracking">Built-in Tracking<a class="headerlink" href="#built-in-tracking" title="Permanent link">&para;</a></h2>
 <p>Token tracking is always enabled:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
@@ -3872,7 +3872,7 @@
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model: </span><span class="si">{</span><span class="n">breakdown</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="default-pricing">Default Pricing<a class="headerlink" href="#default-pricing" title="Permanent link">&para;</a></h3>
-<p>Pydantic Agent includes default pricing for common models:</p>
+<p>Mamba Agents includes default pricing for common models:</p>
 <table>
 <thead>
 <tr>
@@ -3921,7 +3921,7 @@
 </table>
 <h3 id="custom-cost-rates">Custom Cost Rates<a class="headerlink" href="#custom-cost-rates" title="Permanent link">&para;</a></h3>
 <p>Set custom rates via settings:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentSettings</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">AgentSettings</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">settings</span> <span class="o">=</span> <span class="n">AgentSettings</span><span class="p">(</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">cost_rates</span><span class="o">=</span><span class="p">{</span>
@@ -3930,7 +3930,7 @@
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">)</span>
 </span></code></pre></div>
 <p>Or via environment:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">AGENTS_COST_RATES__MY_MODEL</span><span class="o">=</span><span class="m">0</span>.001
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">MAMBA_COST_RATES__MY_MODEL</span><span class="o">=</span><span class="m">0</span>.001
 </span></code></pre></div>
 <h2 id="usage-history">Usage History<a class="headerlink" href="#usage-history" title="Permanent link">&para;</a></h2>
 <p>Get per-request usage details:</p>
@@ -3966,7 +3966,7 @@
 <h2 id="standalone-token-utilities">Standalone Token Utilities<a class="headerlink" href="#standalone-token-utilities" title="Permanent link">&para;</a></h2>
 <p>For advanced use cases, use the token modules directly:</p>
 <h3 id="tokencounter">TokenCounter<a class="headerlink" href="#tokencounter" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent.tokens</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenCounter</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents.tokens</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenCounter</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">counter</span> <span class="o">=</span> <span class="n">TokenCounter</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;cl100k_base&quot;</span><span class="p">)</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
@@ -3981,7 +3981,7 @@
 </span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="n">count</span> <span class="o">=</span> <span class="n">counter</span><span class="o">.</span><span class="n">count_messages</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="usagetracker">UsageTracker<a class="headerlink" href="#usagetracker" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent.tokens</span><span class="w"> </span><span class="kn">import</span> <span class="n">UsageTracker</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents.tokens</span><span class="w"> </span><span class="kn">import</span> <span class="n">UsageTracker</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">tracker</span> <span class="o">=</span> <span class="n">UsageTracker</span><span class="p">()</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
@@ -4003,7 +4003,7 @@
 </span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="n">tracker</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 </span></code></pre></div>
 <h3 id="costestimator">CostEstimator<a class="headerlink" href="#costestimator" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent.tokens</span><span class="w"> </span><span class="kn">import</span> <span class="n">CostEstimator</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents.tokens</span><span class="w"> </span><span class="kn">import</span> <span class="n">CostEstimator</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">estimator</span> <span class="o">=</span> <span class="n">CostEstimator</span><span class="p">()</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
@@ -4026,8 +4026,8 @@
 </span></code></pre></div>
 <h2 id="integration-with-workflows">Integration with Workflows<a class="headerlink" href="#integration-with-workflows" title="Permanent link">&para;</a></h2>
 <p>Workflows track usage through the agent:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent.workflows</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReActWorkflow</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">Agent</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents.workflows</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReActWorkflow</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="s2">&quot;gpt-4o&quot;</span><span class="p">)</span>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">workflow</span> <span class="o">=</span> <span class="n">ReActWorkflow</span><span class="p">(</span><span class="n">agent</span><span class="o">=</span><span class="n">agent</span><span class="p">)</span>
@@ -4053,7 +4053,7 @@
 </span></code></pre></div>
 <h3 id="usage-callbacks">Usage Callbacks<a class="headerlink" href="#usage-callbacks" title="Permanent link">&para;</a></h3>
 <p>Monitor usage in real-time with hooks:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">WorkflowHooks</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">mamba_agents</span><span class="w"> </span><span class="kn">import</span> <span class="n">WorkflowHooks</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">log_usage</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="n">usage</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;usage&quot;</span><span class="p">,</span> <span class="p">{})</span>

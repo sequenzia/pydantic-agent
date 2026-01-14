@@ -5,7 +5,7 @@ Root configuration class using Pydantic Settings.
 ## Quick Example
 
 ```python
-from pydantic_agent import AgentSettings
+from mamba_agents import AgentSettings
 
 # Load from environment, .env, config files
 settings = AgentSettings()
@@ -36,15 +36,15 @@ settings = AgentSettings(
 ## Environment Variables
 
 ```bash
-AGENTS_MODEL_BACKEND__MODEL=gpt-4o
-AGENTS_MODEL_BACKEND__API_KEY=sk-...
-AGENTS_LOGGING__LEVEL=INFO
-AGENTS_RETRY__MAX_RETRIES=3
+MAMBA_MODEL_BACKEND__MODEL=gpt-4o
+MAMBA_MODEL_BACKEND__API_KEY=sk-...
+MAMBA_LOGGING__LEVEL=INFO
+MAMBA_RETRY__MAX_RETRIES=3
 ```
 
 ## API Reference
 
-::: pydantic_agent.config.settings.AgentSettings
+::: mamba_agents.config.settings.AgentSettings
     options:
       show_root_heading: true
       show_source: true

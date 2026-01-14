@@ -12,7 +12,7 @@ Configure and use local language models with Ollama, vLLM, or LM Studio.
 ## Prerequisites
 
 - Python 3.12+
-- Pydantic Agent installed
+- Mamba Agents installed
 - Sufficient RAM (8GB+ recommended)
 - GPU recommended for faster inference
 
@@ -54,10 +54,10 @@ ollama pull codellama
 ollama list
 ```
 
-### Step 4: Configure Pydantic Agent
+### Step 4: Configure Mamba Agents
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 settings = AgentSettings(
     model_backend={
@@ -75,8 +75,8 @@ print(result.output)
 Or via environment variables:
 
 ```bash
-export AGENTS_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
-export AGENTS_MODEL_BACKEND__MODEL=llama3.2
+export MAMBA_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
+export MAMBA_MODEL_BACKEND__MODEL=llama3.2
 ```
 
 ## Option 2: vLLM (Production)
@@ -95,10 +95,10 @@ vllm serve meta-llama/Llama-3.2-3B-Instruct \
     --max-model-len 4096
 ```
 
-### Step 3: Configure Pydantic Agent
+### Step 3: Configure Mamba Agents
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 settings = AgentSettings(
     model_backend={
@@ -148,10 +148,10 @@ Download from [lmstudio.ai](https://lmstudio.ai)
 3. Click "Start Server"
 4. Note the port (default: 1234)
 
-### Step 4: Configure Pydantic Agent
+### Step 4: Configure Mamba Agents
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 settings = AgentSettings(
     model_backend={
@@ -186,8 +186,8 @@ retry_level = 1  # Conservative for local
 
 ```python
 import asyncio
-from pydantic_agent import Agent, AgentSettings, AgentConfig
-from pydantic_agent.tools import read_file, run_bash
+from mamba_agents import Agent, AgentSettings, AgentConfig
+from mamba_agents.tools import read_file, run_bash
 
 
 async def main():
@@ -283,7 +283,7 @@ settings = AgentSettings(
 Not all local models support tool calling. Check model capabilities:
 
 ```python
-from pydantic_agent.backends import get_profile
+from mamba_agents.backends import get_profile
 
 profile = get_profile("llama3.2")
 if not profile.supports_tools:

@@ -5,7 +5,7 @@ Additional configuration classes.
 ## LoggingConfig
 
 ```python
-from pydantic_agent.config import LoggingConfig
+from mamba_agents.config import LoggingConfig
 
 config = LoggingConfig(
     level="INFO",
@@ -23,7 +23,7 @@ config = LoggingConfig(
 ## ErrorRecoveryConfig
 
 ```python
-from pydantic_agent.config import ErrorRecoveryConfig
+from mamba_agents.config import ErrorRecoveryConfig
 
 config = ErrorRecoveryConfig(
     retry_level=2,
@@ -41,7 +41,7 @@ config = ErrorRecoveryConfig(
 ## ObservabilityConfig
 
 ```python
-from pydantic_agent.config import ObservabilityConfig
+from mamba_agents.config import ObservabilityConfig
 
 config = ObservabilityConfig(
     enable_tracing=True,
@@ -52,7 +52,7 @@ config = ObservabilityConfig(
 ## StreamingConfig
 
 ```python
-from pydantic_agent.config import StreamingConfig
+from mamba_agents.config import StreamingConfig
 
 config = StreamingConfig(
     enabled=True,
@@ -62,14 +62,14 @@ config = StreamingConfig(
 
 ## API Reference
 
-::: pydantic_agent.config.logging_config.LoggingConfig
+::: mamba_agents.config.logging_config.LoggingConfig
     options:
       show_root_heading: true
 
-::: pydantic_agent.config.retry.ErrorRecoveryConfig
+::: mamba_agents.config.retry.ErrorRecoveryConfig
     options:
       show_root_heading: true
 
-::: pydantic_agent.config.observability.ObservabilityConfig
+::: mamba_agents.config.observability.ObservabilityConfig
     options:
       show_root_heading: true

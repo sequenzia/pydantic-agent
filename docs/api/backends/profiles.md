@@ -5,7 +5,7 @@ Model capability information.
 ## Quick Example
 
 ```python
-from pydantic_agent.backends import get_profile, ModelProfile
+from mamba_agents.backends import get_profile, ModelProfile
 
 # Get profile
 profile = get_profile("gpt-4o")
@@ -31,10 +31,10 @@ print(f"Provider: {profile.provider}")
 
 ## API Reference
 
-::: pydantic_agent.backends.profiles.ModelProfile
+::: mamba_agents.backends.profiles.ModelProfile
     options:
       show_root_heading: true
 
-::: pydantic_agent.backends.profiles.get_profile
+::: mamba_agents.backends.profiles.get_profile
     options:
       show_root_heading: true

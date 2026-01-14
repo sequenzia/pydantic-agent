@@ -13,12 +13,12 @@ Logging, tracing, and OpenTelemetry integration.
 ## Quick Example
 
 ```python
-from pydantic_agent.observability import (
+from mamba_agents.observability import (
     setup_logging,
     RequestTracer,
     get_otel_integration,
 )
-from pydantic_agent.config import LoggingConfig
+from mamba_agents.config import LoggingConfig
 
 # Setup logging
 config = LoggingConfig(level="INFO", format="json")
@@ -39,7 +39,7 @@ otel.initialize()
 ## Imports
 
 ```python
-from pydantic_agent.observability import (
+from mamba_agents.observability import (
     setup_logging,
     AgentLogger,
     RequestTracer,

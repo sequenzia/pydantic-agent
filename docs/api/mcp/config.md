@@ -5,7 +5,7 @@ Configuration for MCP servers.
 ## Quick Example
 
 ```python
-from pydantic_agent.mcp import MCPServerConfig, MCPAuthConfig
+from mamba_agents.mcp import MCPServerConfig, MCPAuthConfig
 
 # Stdio transport
 config = MCPServerConfig(
@@ -52,11 +52,11 @@ config = MCPServerConfig(
 
 ## API Reference
 
-::: pydantic_agent.mcp.config.MCPServerConfig
+::: mamba_agents.mcp.config.MCPServerConfig
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.mcp.config.MCPAuthConfig
+::: mamba_agents.mcp.config.MCPAuthConfig
     options:
       show_root_heading: true

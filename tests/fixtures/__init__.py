@@ -1,1 +1,1 @@
-"""Test fixtures for pydantic-agent."""
+"""Test fixtures for mamba-agents."""

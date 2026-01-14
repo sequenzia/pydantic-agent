@@ -9,7 +9,7 @@ Base classes for creating custom workflows.
 Abstract base class for workflow implementations.
 
 ```python
-from pydantic_agent import Workflow, WorkflowConfig, WorkflowState
+from mamba_agents import Workflow, WorkflowConfig, WorkflowState
 
 class MyWorkflow(Workflow[None, str, dict]):
     @property
@@ -38,22 +38,22 @@ Result of workflow execution.
 
 ## API Reference
 
-::: pydantic_agent.workflows.base.Workflow
+::: mamba_agents.workflows.base.Workflow
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.workflows.base.WorkflowState
+::: mamba_agents.workflows.base.WorkflowState
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.workflows.base.WorkflowStep
+::: mamba_agents.workflows.base.WorkflowStep
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.workflows.base.WorkflowResult
+::: mamba_agents.workflows.base.WorkflowResult
     options:
       show_root_heading: true
       show_source: true

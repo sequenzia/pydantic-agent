@@ -5,7 +5,7 @@ Manages conversation context and compaction.
 ## Quick Example
 
 ```python
-from pydantic_agent.context import ContextManager, CompactionConfig
+from mamba_agents.context import ContextManager, CompactionConfig
 
 manager = ContextManager(config=CompactionConfig(strategy="hybrid"))
 
@@ -29,12 +29,12 @@ if manager.should_compact():
 
 ## API Reference
 
-::: pydantic_agent.context.manager.ContextManager
+::: mamba_agents.context.manager.ContextManager
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.context.manager.ContextState
+::: mamba_agents.context.manager.ContextState
     options:
       show_root_heading: true
       show_source: true

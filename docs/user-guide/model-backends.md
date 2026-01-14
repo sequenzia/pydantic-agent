@@ -1,6 +1,6 @@
 # Model Backends
 
-Pydantic Agent supports local models through OpenAI-compatible APIs like Ollama, vLLM, and LM Studio.
+Mamba Agents supports local models through OpenAI-compatible APIs like Ollama, vLLM, and LM Studio.
 
 ## Overview
 
@@ -15,7 +15,7 @@ The backends module provides:
 ### Ollama
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 # Option 1: Via settings
 settings = AgentSettings(
@@ -27,14 +27,14 @@ settings = AgentSettings(
 agent = Agent(settings=settings)
 
 # Option 2: Via environment
-# AGENTS_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
-# AGENTS_MODEL_BACKEND__MODEL=llama3.2
+# MAMBA_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
+# MAMBA_MODEL_BACKEND__MODEL=llama3.2
 ```
 
 ### Using Backend Factories
 
 ```python
-from pydantic_agent.backends import (
+from mamba_agents.backends import (
     create_ollama_backend,
     create_vllm_backend,
     create_lmstudio_backend,
@@ -68,7 +68,7 @@ ollama pull llama3.2
 ### Usage
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 settings = AgentSettings(
     model_backend={
@@ -85,8 +85,8 @@ result = agent.run_sync("Hello!")
 ### Environment Configuration
 
 ```bash
-AGENTS_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
-AGENTS_MODEL_BACKEND__MODEL=llama3.2
+MAMBA_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
+MAMBA_MODEL_BACKEND__MODEL=llama3.2
 ```
 
 ## vLLM Setup
@@ -103,7 +103,7 @@ vllm serve meta-llama/Llama-3.2-3B-Instruct --port 8000
 ### Usage
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 settings = AgentSettings(
     model_backend={
@@ -126,7 +126,7 @@ agent = Agent(settings=settings)
 ### Usage
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 settings = AgentSettings(
     model_backend={
@@ -143,7 +143,7 @@ agent = Agent(settings=settings)
 For custom or other OpenAI-compatible servers:
 
 ```python
-from pydantic_agent.backends import OpenAICompatibleBackend
+from mamba_agents.backends import OpenAICompatibleBackend
 
 backend = OpenAICompatibleBackend(
     model="my-model",
@@ -159,7 +159,7 @@ backend = OpenAICompatibleBackend(
 Get information about model capabilities:
 
 ```python
-from pydantic_agent.backends import get_profile, ModelProfile
+from mamba_agents.backends import get_profile, ModelProfile
 
 # Get profile for a model
 profile = get_profile("gpt-4o")
@@ -203,7 +203,7 @@ print(f"Provider: {profile.provider}")
 ### Using Settings Override
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 # Load base settings
 settings = AgentSettings()
@@ -224,13 +224,13 @@ agent = Agent(settings=local_settings if is_dev else settings)
 
 ```bash
 # Development (.env.local)
-AGENTS_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
-AGENTS_MODEL_BACKEND__MODEL=llama3.2
+MAMBA_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
+MAMBA_MODEL_BACKEND__MODEL=llama3.2
 
 # Production (.env.prod)
-AGENTS_MODEL_BACKEND__BASE_URL=https://api.openai.com/v1
-AGENTS_MODEL_BACKEND__MODEL=gpt-4o
-AGENTS_MODEL_BACKEND__API_KEY=sk-...
+MAMBA_MODEL_BACKEND__BASE_URL=https://api.openai.com/v1
+MAMBA_MODEL_BACKEND__MODEL=gpt-4o
+MAMBA_MODEL_BACKEND__API_KEY=sk-...
 ```
 
 ## Troubleshooting
@@ -285,7 +285,7 @@ else:
 ### 2. Handle Model Limitations
 
 ```python
-from pydantic_agent.backends import get_profile
+from mamba_agents.backends import get_profile
 
 profile = get_profile(settings.model_backend.model)
 

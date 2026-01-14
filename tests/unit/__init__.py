@@ -1,1 +1,1 @@
-"""Unit tests for pydantic-agent."""
+"""Unit tests for mamba-agents."""

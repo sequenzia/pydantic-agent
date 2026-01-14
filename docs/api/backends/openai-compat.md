@@ -5,7 +5,7 @@ Backend adapter for OpenAI-compatible APIs.
 ## Quick Example
 
 ```python
-from pydantic_agent.backends import OpenAICompatibleBackend
+from mamba_agents.backends import OpenAICompatibleBackend
 
 # Direct instantiation
 backend = OpenAICompatibleBackend(
@@ -15,7 +15,7 @@ backend = OpenAICompatibleBackend(
 )
 
 # Or use factory functions
-from pydantic_agent.backends import (
+from mamba_agents.backends import (
     create_ollama_backend,
     create_vllm_backend,
     create_lmstudio_backend,
@@ -41,19 +41,19 @@ backend = create_lmstudio_backend()
 
 ## API Reference
 
-::: pydantic_agent.backends.openai_compat.OpenAICompatibleBackend
+::: mamba_agents.backends.openai_compat.OpenAICompatibleBackend
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.backends.openai_compat.create_ollama_backend
+::: mamba_agents.backends.openai_compat.create_ollama_backend
     options:
       show_root_heading: true
 
-::: pydantic_agent.backends.openai_compat.create_vllm_backend
+::: mamba_agents.backends.openai_compat.create_vllm_backend
     options:
       show_root_heading: true
 
-::: pydantic_agent.backends.openai_compat.create_lmstudio_backend
+::: mamba_agents.backends.openai_compat.create_lmstudio_backend
     options:
       show_root_heading: true

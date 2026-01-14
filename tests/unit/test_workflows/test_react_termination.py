@@ -7,7 +7,7 @@ from unittest.mock import Mock
 
 import pytest
 
-from pydantic_agent.workflows.react.termination import (
+from mamba_agents.workflows.react.termination import (
     detect_final_answer,
     extract_text_content,
     extract_tool_calls,

@@ -1,1 +1,1 @@
-"""Pydantic Agent test suite."""
+"""Mamba Agents test suite."""

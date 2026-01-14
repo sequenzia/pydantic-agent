@@ -5,8 +5,8 @@ Registry for organizing and managing tools.
 ## Quick Example
 
 ```python
-from pydantic_agent.tools import ToolRegistry
-from pydantic_agent.tools import read_file, write_file
+from mamba_agents.tools import ToolRegistry
+from mamba_agents.tools import read_file, write_file
 
 registry = ToolRegistry()
 
@@ -18,13 +18,13 @@ registry.register(write_file)
 all_tools = registry.get_all()
 
 # Use with agent
-from pydantic_agent import Agent
+from mamba_agents import Agent
 agent = Agent("gpt-4o", tools=all_tools)
 ```
 
 ## API Reference
 
-::: pydantic_agent.tools.registry.ToolRegistry
+::: mamba_agents.tools.registry.ToolRegistry
     options:
       show_root_heading: true
       show_source: true

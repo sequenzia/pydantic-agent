@@ -1,6 +1,6 @@
 # Creating Custom Tools
 
-Learn how to create, test, and register custom tools for your Pydantic Agent.
+Learn how to create, test, and register custom tools for your Mamba Agents.
 
 ## What You'll Learn
 
@@ -12,7 +12,7 @@ Learn how to create, test, and register custom tools for your Pydantic Agent.
 ## Prerequisites
 
 - Python 3.12+
-- Pydantic Agent installed
+- Mamba Agents installed
 - Basic understanding of type hints
 
 ## Step 1: Simple Tool with Decorator
@@ -20,7 +20,7 @@ Learn how to create, test, and register custom tools for your Pydantic Agent.
 The simplest way to create a tool is with the `@agent.tool` decorator:
 
 ```python
-from pydantic_agent import Agent
+from mamba_agents import Agent
 
 agent = Agent("gpt-4o")
 
@@ -204,7 +204,7 @@ Here's a complete example with multiple tools:
 ```python
 import asyncio
 from datetime import datetime
-from pydantic_agent import Agent, AgentConfig
+from mamba_agents import Agent, AgentConfig
 
 # Create agent
 agent = Agent(

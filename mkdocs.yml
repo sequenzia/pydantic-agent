@@ -1,5 +1,5 @@
-site_name: Pydantic Agent
-site_description: A simple, extensible AI Agent framework built on pydantic-ai
+site_name: Mamba Agents
+site_description: Mamba Agents - A simple, extensible AI Agent framework built on pydantic-ai
 site_url: https://sequenzia.github.io/pydantic-agent
 repo_url: https://github.com/sequenzia/pydantic-agent
 repo_name: sequenzia/pydantic-agent

@@ -13,7 +13,7 @@ Context window management and compaction.
 ## Quick Example
 
 ```python
-from pydantic_agent.context import ContextManager, CompactionConfig
+from mamba_agents.context import ContextManager, CompactionConfig
 
 config = CompactionConfig(
     strategy="hybrid",
@@ -31,6 +31,6 @@ if manager.should_compact():
 ## Imports
 
 ```python
-from pydantic_agent import CompactionConfig, ContextState
-from pydantic_agent.context import ContextManager, CompactionConfig
+from mamba_agents import CompactionConfig, ContextState
+from mamba_agents.context import ContextManager, CompactionConfig
 ```

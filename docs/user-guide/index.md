@@ -1,6 +1,6 @@
 # User Guide
 
-This guide covers all the features of Pydantic Agent in detail.
+This guide covers all the features of Mamba Agents in detail.
 
 ## Core Features
 
@@ -90,12 +90,12 @@ This guide covers all the features of Pydantic Agent in detail.
 
 | Feature | Module | Primary Classes |
 |---------|--------|-----------------|
-| Agents | `pydantic_agent` | `Agent`, `AgentConfig`, `AgentResult` |
-| Tools | `pydantic_agent.tools` | `read_file`, `run_bash`, `glob_search` |
-| Context | `pydantic_agent.context` | `ContextManager`, `CompactionConfig` |
-| Tokens | `pydantic_agent.tokens` | `TokenCounter`, `UsageTracker`, `CostEstimator` |
-| Workflows | `pydantic_agent.workflows` | `Workflow`, `ReActWorkflow` |
-| MCP | `pydantic_agent.mcp` | `MCPClientManager`, `MCPServerConfig` |
-| Backends | `pydantic_agent.backends` | `OpenAICompatibleBackend` |
-| Errors | `pydantic_agent.errors` | `CircuitBreaker`, `AgentError` |
-| Observability | `pydantic_agent.observability` | `setup_logging`, `RequestTracer` |
+| Agents | `mamba_agents` | `Agent`, `AgentConfig`, `AgentResult` |
+| Tools | `mamba_agents.tools` | `read_file`, `run_bash`, `glob_search` |
+| Context | `mamba_agents.context` | `ContextManager`, `CompactionConfig` |
+| Tokens | `mamba_agents.tokens` | `TokenCounter`, `UsageTracker`, `CostEstimator` |
+| Workflows | `mamba_agents.workflows` | `Workflow`, `ReActWorkflow` |
+| MCP | `mamba_agents.mcp` | `MCPClientManager`, `MCPServerConfig` |
+| Backends | `mamba_agents.backends` | `OpenAICompatibleBackend` |
+| Errors | `mamba_agents.errors` | `CircuitBreaker`, `AgentError` |
+| Observability | `mamba_agents.observability` | `setup_logging`, `RequestTracer` |

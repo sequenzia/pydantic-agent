@@ -1,10 +1,10 @@
 # Getting Started
 
-Welcome to Pydantic Agent! This section will help you get up and running quickly.
+Welcome to Mamba Agents! This section will help you get up and running quickly.
 
 ## Prerequisites
 
-- **Python 3.12+** - Pydantic Agent requires Python 3.12 or later
+- **Python 3.12+** - Mamba Agents requires Python 3.12 or later
 - **API Key** - An API key for your chosen model provider (OpenAI, Anthropic, etc.), or a local model server
 
 ## What's in this section
@@ -15,7 +15,7 @@ Welcome to Pydantic Agent! This section will help you get up and running quickly
 
     ---
 
-    Install Pydantic Agent using uv or pip, including optional dependencies.
+    Install Mamba Agents using uv or pip, including optional dependencies.
 
     [:octicons-arrow-right-24: Installation](installation.md)
 
@@ -39,7 +39,7 @@ Welcome to Pydantic Agent! This section will help you get up and running quickly
 
 ## Overview
 
-Pydantic Agent is a thin wrapper around [pydantic-ai](https://ai.pydantic.dev/) that adds enterprise-grade infrastructure:
+Mamba Agents is a thin wrapper around [pydantic-ai](https://ai.pydantic.dev/) that adds enterprise-grade infrastructure:
 
 | Feature | Description |
 |---------|-------------|
@@ -53,7 +53,7 @@ Pydantic Agent is a thin wrapper around [pydantic-ai](https://ai.pydantic.dev/) 
 The simplest way to start is:
 
 ```python
-from pydantic_agent import Agent
+from mamba_agents import Agent
 
 agent = Agent("gpt-4o")
 result = agent.run_sync("Hello!")

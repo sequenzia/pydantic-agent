@@ -7,7 +7,7 @@ This guide will get you running your first agent in under 5 minutes.
 Before you begin, make sure you have:
 
 1. Python 3.12+ installed
-2. Pydantic Agent installed (`uv add pydantic-agent`)
+2. Mamba Agents installed (`uv add mamba-agents`)
 3. An API key for your model provider
 
 ## Step 1: Set Up Your API Key
@@ -30,14 +30,14 @@ The simplest way to provide your API key is through an environment variable:
 
     Create a `.env` file in your project:
     ```
-    AGENTS_MODEL_BACKEND__API_KEY=sk-...
-    AGENTS_MODEL_BACKEND__MODEL=gpt-4o
+    MAMBA_MODEL_BACKEND__API_KEY=sk-...
+    MAMBA_MODEL_BACKEND__MODEL=gpt-4o
     ```
 
 ## Step 2: Create Your First Agent
 
 ```python
-from pydantic_agent import Agent
+from mamba_agents import Agent
 
 # Create an agent with a model
 agent = Agent("gpt-4o")
@@ -50,7 +50,7 @@ print(result.output)
 ## Step 3: Add a System Prompt
 
 ```python
-from pydantic_agent import Agent, AgentConfig
+from mamba_agents import Agent, AgentConfig
 
 agent = Agent(
     "gpt-4o",
@@ -68,8 +68,8 @@ print(result.output)
 Give your agent the ability to interact with the filesystem:
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.tools import read_file, list_directory, glob_search
+from mamba_agents import Agent
+from mamba_agents.tools import read_file, list_directory, glob_search
 
 agent = Agent(
     "gpt-4o",
@@ -83,7 +83,7 @@ print(result.output)
 ## Step 5: Track Usage and Cost
 
 ```python
-from pydantic_agent import Agent
+from mamba_agents import Agent
 
 agent = Agent("gpt-4o")
 
@@ -107,7 +107,7 @@ print(f"Estimated cost: ${cost:.4f}")
 Context is maintained automatically across runs:
 
 ```python
-from pydantic_agent import Agent
+from mamba_agents import Agent
 
 agent = Agent("gpt-4o")
 
@@ -129,7 +129,7 @@ print(f"Tokens used: {state.token_count}")
 For more control, use the settings system:
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 # Load settings from env vars, .env files, and config.toml
 settings = AgentSettings()
@@ -147,8 +147,8 @@ Here's a complete example bringing it all together:
 
 ```python
 import asyncio
-from pydantic_agent import Agent, AgentConfig, AgentSettings
-from pydantic_agent.tools import read_file, run_bash
+from mamba_agents import Agent, AgentConfig, AgentSettings
+from mamba_agents.tools import read_file, run_bash
 
 async def main():
     # Load settings

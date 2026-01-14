@@ -15,8 +15,8 @@ Built-in tools for agent use.
 ## Quick Example
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.tools import (
+from mamba_agents import Agent
+from mamba_agents.tools import (
     read_file,
     write_file,
     list_directory,

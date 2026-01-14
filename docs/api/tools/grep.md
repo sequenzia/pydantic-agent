@@ -5,7 +5,7 @@ Search file contents with regex.
 ## Quick Example
 
 ```python
-from pydantic_agent.tools import grep_search
+from mamba_agents.tools import grep_search
 
 # Search for pattern
 matches = grep_search(
@@ -34,7 +34,7 @@ for match in matches:
 
 ## API Reference
 
-::: pydantic_agent.tools.grep.grep_search
+::: mamba_agents.tools.grep.grep_search
     options:
       show_root_heading: true
       show_source: true

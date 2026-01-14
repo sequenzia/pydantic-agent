@@ -1,6 +1,6 @@
 # Observability
 
-Pydantic Agent provides comprehensive observability through structured logging, tracing, and OpenTelemetry integration.
+Mamba Agents provides comprehensive observability through structured logging, tracing, and OpenTelemetry integration.
 
 ## Overview
 
@@ -15,8 +15,8 @@ The observability system includes:
 ### Basic Setup
 
 ```python
-from pydantic_agent.observability import setup_logging
-from pydantic_agent.config import LoggingConfig
+from mamba_agents.observability import setup_logging
+from mamba_agents.config import LoggingConfig
 
 # Configure logging
 config = LoggingConfig(
@@ -69,7 +69,7 @@ logger.info(f"Using API key: {api_key}")
 ### Configuration
 
 ```python
-from pydantic_agent.config import LoggingConfig
+from mamba_agents.config import LoggingConfig
 
 config = LoggingConfig(
     level="INFO",
@@ -83,9 +83,9 @@ config = LoggingConfig(
 Or via environment:
 
 ```bash
-AGENTS_LOGGING__LEVEL=INFO
-AGENTS_LOGGING__FORMAT=json
-AGENTS_LOGGING__REDACT_SENSITIVE=true
+MAMBA_LOGGING__LEVEL=INFO
+MAMBA_LOGGING__FORMAT=json
+MAMBA_LOGGING__REDACT_SENSITIVE=true
 ```
 
 ## Request Tracing
@@ -93,7 +93,7 @@ AGENTS_LOGGING__REDACT_SENSITIVE=true
 ### Basic Tracing
 
 ```python
-from pydantic_agent.observability import RequestTracer
+from mamba_agents.observability import RequestTracer
 
 tracer = RequestTracer()
 
@@ -160,15 +160,15 @@ for span in trace.spans:
 ### Installation
 
 ```bash
-uv add pydantic-agent[otel]
+uv add mamba-agents[otel]
 # or
-pip install pydantic-agent[otel]
+pip install mamba-agents[otel]
 ```
 
 ### Basic Setup
 
 ```python
-from pydantic_agent.observability import get_otel_integration
+from mamba_agents.observability import get_otel_integration
 
 otel = get_otel_integration()
 
@@ -234,7 +234,7 @@ otel.add_span_processor(BatchSpanProcessor(otlp_exporter))
 ### Configuration
 
 ```python
-from pydantic_agent.config import ObservabilityConfig
+from mamba_agents.config import ObservabilityConfig
 
 config = ObservabilityConfig(
     enable_tracing=True,
@@ -247,8 +247,8 @@ config = ObservabilityConfig(
 Or via environment:
 
 ```bash
-AGENTS_OBSERVABILITY__ENABLE_TRACING=true
-AGENTS_OBSERVABILITY__SERVICE_NAME=my-agent-service
+MAMBA_OBSERVABILITY__ENABLE_TRACING=true
+MAMBA_OBSERVABILITY__SERVICE_NAME=my-agent-service
 OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.example.com:4317
 ```
 
@@ -256,9 +256,9 @@ OTEL_EXPORTER_OTLP_ENDPOINT=https://otlp.example.com:4317
 
 ```python
 import asyncio
-from pydantic_agent import Agent, AgentSettings
-from pydantic_agent.observability import setup_logging, RequestTracer, get_otel_integration
-from pydantic_agent.config import LoggingConfig
+from mamba_agents import Agent, AgentSettings
+from mamba_agents.observability import setup_logging, RequestTracer, get_otel_integration
+from mamba_agents.config import LoggingConfig
 
 async def main():
     # Setup logging
@@ -307,7 +307,7 @@ asyncio.run(main())
 |--------|------|---------|-------------|
 | `enable_tracing` | bool | `False` | Enable OpenTelemetry tracing |
 | `enable_metrics` | bool | `False` | Enable OpenTelemetry metrics |
-| `service_name` | str | `"pydantic-agent"` | Service name for traces |
+| `service_name` | str | `"mamba-agents"` | Service name for traces |
 | `service_version` | str | `"1.0.0"` | Service version |
 
 ## Best Practices

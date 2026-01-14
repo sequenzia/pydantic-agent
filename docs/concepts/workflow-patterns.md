@@ -40,8 +40,8 @@ graph TD
 ### Implementation
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.workflows import ReActWorkflow, ReActConfig
+from mamba_agents import Agent
+from mamba_agents.workflows import ReActWorkflow, ReActConfig
 
 agent = Agent("gpt-4o", tools=[read_file, run_bash])
 workflow = ReActWorkflow(agent=agent, config=ReActConfig(max_iterations=15))
@@ -86,7 +86,7 @@ graph TD
 ### Implementation
 
 ```python
-from pydantic_agent import Agent, Workflow, WorkflowConfig, WorkflowState
+from mamba_agents import Agent, Workflow, WorkflowConfig, WorkflowState
 
 class PlanExecuteWorkflow(Workflow[None, str, dict]):
     def __init__(self, planner: Agent, executor: Agent, config=None):

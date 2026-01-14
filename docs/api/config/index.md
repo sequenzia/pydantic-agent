@@ -13,7 +13,7 @@ Configuration and settings classes.
 ## Quick Example
 
 ```python
-from pydantic_agent import AgentSettings
+from mamba_agents import AgentSettings
 
 # Load from all sources
 settings = AgentSettings()
@@ -26,17 +26,17 @@ print(settings.logging.level)
 ## Configuration Priority
 
 1. Constructor arguments
-2. Environment variables (`AGENTS_*`)
+2. Environment variables (`MAMBA_*`)
 3. `.env` file
-4. `~/agents.env`
+4. `~/mamba.env`
 5. `config.toml` / `config.yaml`
 6. Default values
 
 ## Imports
 
 ```python
-from pydantic_agent import AgentSettings
-from pydantic_agent.config import (
+from mamba_agents import AgentSettings
+from mamba_agents.config import (
     AgentSettings,
     ModelBackendSettings,
     LoggingConfig,

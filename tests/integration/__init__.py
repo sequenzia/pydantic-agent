@@ -1,1 +1,1 @@
-"""Integration tests for pydantic-agent."""
+"""Integration tests for mamba-agents."""

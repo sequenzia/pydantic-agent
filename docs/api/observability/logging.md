@@ -5,8 +5,8 @@ Structured logging utilities.
 ## Quick Example
 
 ```python
-from pydantic_agent.observability import setup_logging
-from pydantic_agent.config import LoggingConfig
+from mamba_agents.observability import setup_logging
+from mamba_agents.config import LoggingConfig
 
 config = LoggingConfig(
     level="INFO",
@@ -42,10 +42,10 @@ logger.info("Agent started", model="gpt-4o")
 
 ## API Reference
 
-::: pydantic_agent.observability.logging.setup_logging
+::: mamba_agents.observability.logging.setup_logging
     options:
       show_root_heading: true
 
-::: pydantic_agent.observability.logging.AgentLogger
+::: mamba_agents.observability.logging.AgentLogger
     options:
       show_root_heading: true

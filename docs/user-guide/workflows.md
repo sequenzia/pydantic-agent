@@ -24,9 +24,9 @@ The ReAct (Reasoning and Acting) workflow implements an iterative loop:
 ### Basic Usage
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.workflows import ReActWorkflow, ReActConfig
-from pydantic_agent.tools import read_file, run_bash, grep_search
+from mamba_agents import Agent
+from mamba_agents.workflows import ReActWorkflow, ReActConfig
+from mamba_agents.tools import read_file, run_bash, grep_search
 
 # Create agent with tools
 agent = Agent(
@@ -67,7 +67,7 @@ print(workflow.get_reasoning_trace())
 ### ReAct Configuration
 
 ```python
-from pydantic_agent.workflows import ReActConfig
+from mamba_agents.workflows import ReActConfig
 
 config = ReActConfig(
     # Iteration limits
@@ -104,7 +104,7 @@ workflow = ReActWorkflow(agent=agent, config=config)
 Monitor workflow execution with hooks:
 
 ```python
-from pydantic_agent.workflows import ReActHooks
+from mamba_agents.workflows import ReActHooks
 
 def on_thought(state, thought):
     print(f"Thinking: {thought[:100]}...")
@@ -137,7 +137,7 @@ workflow = ReActWorkflow(agent=agent, hooks=hooks)
 Create custom workflows by extending the `Workflow` base class:
 
 ```python
-from pydantic_agent import Agent, Workflow, WorkflowConfig, WorkflowState, WorkflowResult
+from mamba_agents import Agent, Workflow, WorkflowConfig, WorkflowState, WorkflowResult
 
 class PlanExecuteWorkflow(Workflow[None, str, dict]):
     """A Plan-and-Execute workflow pattern."""
@@ -242,7 +242,7 @@ result = await workflow.run("Refactor the authentication module")
 All 8 base hooks:
 
 ```python
-from pydantic_agent import WorkflowHooks
+from mamba_agents import WorkflowHooks
 
 hooks = WorkflowHooks(
     # Workflow lifecycle

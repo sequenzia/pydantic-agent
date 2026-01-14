@@ -5,7 +5,7 @@ Request tracing utilities.
 ## Quick Example
 
 ```python
-from pydantic_agent.observability import RequestTracer
+from mamba_agents.observability import RequestTracer
 
 tracer = RequestTracer()
 
@@ -44,11 +44,11 @@ for span in trace.spans:
 
 ## API Reference
 
-::: pydantic_agent.observability.tracing.RequestTracer
+::: mamba_agents.observability.tracing.RequestTracer
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.observability.tracing.Span
+::: mamba_agents.observability.tracing.Span
     options:
       show_root_heading: true

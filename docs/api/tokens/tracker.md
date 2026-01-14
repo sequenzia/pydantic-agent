@@ -5,7 +5,7 @@ Track token usage across requests.
 ## Quick Example
 
 ```python
-from pydantic_agent.tokens import UsageTracker
+from mamba_agents.tokens import UsageTracker
 
 tracker = UsageTracker()
 
@@ -40,15 +40,15 @@ Single usage record.
 
 ## API Reference
 
-::: pydantic_agent.tokens.tracker.UsageTracker
+::: mamba_agents.tokens.tracker.UsageTracker
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.tokens.tracker.TokenUsage
+::: mamba_agents.tokens.tracker.TokenUsage
     options:
       show_root_heading: true
 
-::: pydantic_agent.tokens.tracker.UsageRecord
+::: mamba_agents.tokens.tracker.UsageRecord
     options:
       show_root_heading: true

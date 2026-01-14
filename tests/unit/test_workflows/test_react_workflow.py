@@ -8,8 +8,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 from pydantic_ai.models.test import TestModel
 
-from pydantic_agent import Agent
-from pydantic_agent.workflows import (
+from mamba_agents import Agent
+from mamba_agents.workflows import (
     ReActConfig,
     ReActHooks,
     ReActState,

@@ -12,8 +12,8 @@ Model Context Protocol integration.
 ## Quick Example
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.mcp import MCPClientManager, MCPServerConfig
+from mamba_agents import Agent
+from mamba_agents.mcp import MCPClientManager, MCPServerConfig
 
 servers = [
     MCPServerConfig(
@@ -32,5 +32,5 @@ async with MCPClientManager(servers) as manager:
 ## Imports
 
 ```python
-from pydantic_agent.mcp import MCPClientManager, MCPServerConfig, MCPAuthConfig
+from mamba_agents.mcp import MCPClientManager, MCPServerConfig, MCPAuthConfig
 ```

@@ -1,6 +1,6 @@
 # Tutorials
 
-Step-by-step guides for common use cases with Pydantic Agent.
+Step-by-step guides for common use cases with Mamba Agents.
 
 ## Available Tutorials
 
@@ -53,7 +53,7 @@ Step-by-step guides for common use cases with Pydantic Agent.
 Before starting these tutorials, make sure you have:
 
 1. **Python 3.12+** installed
-2. **Pydantic Agent** installed (`uv add pydantic-agent`)
+2. **Mamba Agents** installed (`uv add mamba-agents`)
 3. **API access** to a model provider (or local model server)
 
 ## Tutorial Structure

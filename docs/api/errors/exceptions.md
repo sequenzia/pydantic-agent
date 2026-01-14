@@ -19,7 +19,7 @@ AgentError (base)
 ## Quick Example
 
 ```python
-from pydantic_agent.errors import (
+from mamba_agents.errors import (
     AgentError,
     ModelBackendError,
     RateLimitError,
@@ -46,38 +46,38 @@ except AgentError as e:
 
 ## API Reference
 
-::: pydantic_agent.errors.exceptions.AgentError
+::: mamba_agents.errors.exceptions.AgentError
     options:
       show_root_heading: true
 
-::: pydantic_agent.errors.exceptions.ConfigurationError
+::: mamba_agents.errors.exceptions.ConfigurationError
     options:
       show_root_heading: true
 
-::: pydantic_agent.errors.exceptions.ModelBackendError
+::: mamba_agents.errors.exceptions.ModelBackendError
     options:
       show_root_heading: true
 
-::: pydantic_agent.errors.exceptions.RateLimitError
+::: mamba_agents.errors.exceptions.RateLimitError
     options:
       show_root_heading: true
 
-::: pydantic_agent.errors.exceptions.AuthenticationError
+::: mamba_agents.errors.exceptions.AuthenticationError
     options:
       show_root_heading: true
 
-::: pydantic_agent.errors.exceptions.ToolExecutionError
+::: mamba_agents.errors.exceptions.ToolExecutionError
     options:
       show_root_heading: true
 
-::: pydantic_agent.errors.exceptions.ContextOverflowError
+::: mamba_agents.errors.exceptions.ContextOverflowError
     options:
       show_root_heading: true
 
-::: pydantic_agent.errors.exceptions.MCPError
+::: mamba_agents.errors.exceptions.MCPError
     options:
       show_root_heading: true
 
-::: pydantic_agent.errors.exceptions.TimeoutError
+::: mamba_agents.errors.exceptions.TimeoutError
     options:
       show_root_heading: true

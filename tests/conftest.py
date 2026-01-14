@@ -1,4 +1,4 @@
-"""Shared test fixtures and configuration for pydantic-agent tests."""
+"""Shared test fixtures and configuration for mamba-agents tests."""
 
 from __future__ import annotations
 
@@ -94,11 +94,11 @@ def mock_env(monkeypatch: pytest.MonkeyPatch) -> dict[str, str]:
     Returns the dict of set variables for assertions.
     """
     env_vars = {
-        "AGENTS_MODEL_BACKEND__BASE_URL": "http://test:8080/v1",
-        "AGENTS_MODEL_BACKEND__MODEL": "test-model",
-        "AGENTS_MODEL_BACKEND__API_KEY": "test-api-key",
-        "AGENTS_LOGGING__LEVEL": "DEBUG",
-        "AGENTS_RETRY__RETRY_LEVEL": "3",
+        "MAMBA_MODEL_BACKEND__BASE_URL": "http://test:8080/v1",
+        "MAMBA_MODEL_BACKEND__MODEL": "test-model",
+        "MAMBA_MODEL_BACKEND__API_KEY": "test-api-key",
+        "MAMBA_LOGGING__LEVEL": "DEBUG",
+        "MAMBA_RETRY__RETRY_LEVEL": "3",
     }
     for key, value in env_vars.items():
         monkeypatch.setenv(key, value)

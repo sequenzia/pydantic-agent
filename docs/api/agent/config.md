@@ -5,7 +5,7 @@ Configuration options for agent behavior.
 ## Quick Example
 
 ```python
-from pydantic_agent import Agent, AgentConfig, CompactionConfig
+from mamba_agents import Agent, AgentConfig, CompactionConfig
 
 config = AgentConfig(
     system_prompt="You are a helpful assistant.",
@@ -34,7 +34,7 @@ agent = Agent("gpt-4o", config=config)
 
 ## API Reference
 
-::: pydantic_agent.agent.config.AgentConfig
+::: mamba_agents.agent.config.AgentConfig
     options:
       show_root_heading: true
       show_source: true

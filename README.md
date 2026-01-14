@@ -1,4 +1,4 @@
-# Pydantic Agent
+# Mamba Agents
 
 A simple, extensible AI Agent framework built on [pydantic-ai](https://ai.pydantic.dev/).
 
@@ -18,18 +18,18 @@ A simple, extensible AI Agent framework built on [pydantic-ai](https://ai.pydant
 
 ```bash
 # Using uv (recommended)
-uv add pydantic-agent
+uv add mamba-agents
 
 # Using pip
-pip install pydantic-agent
+pip install mamba-agents
 ```
 
 ## Quick Start
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
-# Load settings from env vars, .env, ~/agents.env, config.toml
+# Load settings from env vars, .env, ~/mamba.env, config.toml
 settings = AgentSettings()
 
 # Create agent using settings (model, api_key, base_url from settings)
@@ -61,24 +61,24 @@ print(agent.get_context_state())  # ContextState(token_count=..., message_count=
 
 ### Environment Variables
 
-All settings use the `AGENTS_` prefix. Variables can be set in:
+All settings use the `MAMBA_` prefix. Variables can be set in:
 - Environment variables
 - `.env` file (project-specific)
-- `~/agents.env` (user-wide defaults)
+- `~/mamba.env` (user-wide defaults)
 
 ```bash
 # Model configuration
-AGENTS_MODEL_BACKEND__MODEL=gpt-4o
-AGENTS_MODEL_BACKEND__API_KEY=sk-...
-AGENTS_MODEL_BACKEND__BASE_URL=https://api.openai.com/v1
+MAMBA_MODEL_BACKEND__MODEL=gpt-4o
+MAMBA_MODEL_BACKEND__API_KEY=sk-...
+MAMBA_MODEL_BACKEND__BASE_URL=https://api.openai.com/v1
 
 # Logging
-AGENTS_LOGGING__LEVEL=INFO
-AGENTS_LOGGING__FORMAT=json
+MAMBA_LOGGING__LEVEL=INFO
+MAMBA_LOGGING__FORMAT=json
 
 # Retry behavior
-AGENTS_RETRY__MAX_RETRIES=3
-AGENTS_RETRY__RETRY_LEVEL=2
+MAMBA_RETRY__MAX_RETRIES=3
+MAMBA_RETRY__RETRY_LEVEL=2
 ```
 
 ### TOML Configuration
@@ -124,7 +124,7 @@ target_tokens = 80000
 ### Usage Examples
 
 ```python
-from pydantic_agent.tools import (
+from mamba_agents.tools import (
     read_file, write_file, list_directory,
     glob_search, grep_search, run_bash,
 )
@@ -153,7 +153,7 @@ print(result.stdout)
 ### Security Sandbox
 
 ```python
-from pydantic_agent.tools.filesystem import FilesystemSecurity
+from mamba_agents.tools.filesystem import FilesystemSecurity
 
 security = FilesystemSecurity(
     sandbox_mode=True,
@@ -170,7 +170,7 @@ content = read_file("data.txt", security=security)
 Connect to Model Context Protocol servers:
 
 ```python
-from pydantic_agent.mcp import MCPServerConfig, MCPClientManager
+from mamba_agents.mcp import MCPServerConfig, MCPClientManager
 
 # Configure MCP servers
 servers = [
@@ -200,7 +200,7 @@ Context is managed automatically by the Agent. Messages are tracked across runs 
 ### Built-in Agent Context (Recommended)
 
 ```python
-from pydantic_agent import Agent, AgentConfig, CompactionConfig
+from mamba_agents import Agent, AgentConfig, CompactionConfig
 
 # Context tracking is enabled by default
 agent = Agent("gpt-4o", settings=settings)
@@ -242,7 +242,7 @@ agent = Agent("gpt-4o", settings=settings, config=config)
 For advanced use cases, you can use ContextManager directly:
 
 ```python
-from pydantic_agent.context import (
+from mamba_agents.context import (
     ContextManager,
     CompactionConfig,
     SlidingWindowStrategy,
@@ -289,7 +289,7 @@ Usage tracking and cost estimation are built into the Agent. Every run automatic
 ### Built-in Agent Tracking (Recommended)
 
 ```python
-from pydantic_agent import Agent
+from mamba_agents import Agent
 
 agent = Agent("gpt-4o", settings=settings)
 
@@ -329,7 +329,7 @@ count = agent.get_token_count("Hello, world!")
 For advanced use cases, you can use the token utilities directly:
 
 ```python
-from pydantic_agent.tokens import TokenCounter, UsageTracker, CostEstimator
+from mamba_agents.tokens import TokenCounter, UsageTracker, CostEstimator
 
 # Count tokens
 counter = TokenCounter(encoding="cl100k_base")
@@ -355,9 +355,9 @@ Workflows provide orchestration patterns for multi-step agent execution.
 The ReAct (Reasoning and Acting) workflow implements an iterative Thought → Action → Observation loop:
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.workflows import ReActWorkflow, ReActConfig
-from pydantic_agent.tools import read_file, run_bash, grep_search
+from mamba_agents import Agent
+from mamba_agents.workflows import ReActWorkflow, ReActConfig
+from mamba_agents.tools import read_file, run_bash, grep_search
 
 # Create agent with tools
 agent = Agent(
@@ -396,7 +396,7 @@ print(f"Cost: ${workflow.get_cost():.4f}")
 Create custom workflows by extending the `Workflow` base class:
 
 ```python
-from pydantic_agent import Agent, Workflow, WorkflowConfig, WorkflowState, WorkflowHooks
+from mamba_agents import Agent, Workflow, WorkflowConfig, WorkflowState, WorkflowHooks
 
 # Create a custom workflow by extending Workflow
 class MyWorkflow(Workflow[None, str, dict]):
@@ -433,8 +433,8 @@ print(f"Steps: {result.total_steps}")
 ### Workflow Configuration
 
 ```python
-from pydantic_agent import WorkflowConfig
-from pydantic_agent.workflows import ReActConfig
+from mamba_agents import WorkflowConfig
+from mamba_agents.workflows import ReActConfig
 
 # Base workflow configuration
 config = WorkflowConfig(
@@ -466,8 +466,8 @@ react_config = ReActConfig(
 Add observability with lifecycle hooks:
 
 ```python
-from pydantic_agent import WorkflowHooks
-from pydantic_agent.workflows import ReActHooks
+from mamba_agents import WorkflowHooks
+from mamba_agents.workflows import ReActHooks
 
 # Base workflow hooks
 def on_step_complete(state, step):
@@ -501,7 +501,7 @@ workflow = ReActWorkflow(agent, config=react_config, hooks=react_hooks)
 Use local models with OpenAI-compatible APIs:
 
 ```python
-from pydantic_agent.backends import (
+from mamba_agents.backends import (
     OpenAICompatibleBackend,
     create_ollama_backend,
     create_vllm_backend,
@@ -536,7 +536,7 @@ print(f"Supports tools: {profile.supports_tools}")
 Robust error handling with retry and circuit breaker:
 
 ```python
-from pydantic_agent.errors import (
+from mamba_agents.errors import (
     AgentError,
     ModelBackendError,
     RateLimitError,
@@ -561,12 +561,12 @@ async with breaker:
 Structured logging and tracing:
 
 ```python
-from pydantic_agent.observability import (
+from mamba_agents.observability import (
     setup_logging,
     RequestTracer,
     get_otel_integration,
 )
-from pydantic_agent.config import LoggingConfig
+from mamba_agents.config import LoggingConfig
 
 # Configure logging
 config = LoggingConfig(
@@ -597,8 +597,8 @@ if otel.initialize():
 
 ```bash
 # Clone the repository
-git clone https://github.com/sequenzia/pydantic-agent.git
-cd pydantic-agent
+git clone https://github.com/sequenzia/mamba-agents.git
+cd mamba-agents
 
 # Install dependencies
 uv sync
@@ -607,7 +607,7 @@ uv sync
 uv run pytest
 
 # Run tests with coverage
-uv run pytest --cov=pydantic_agent
+uv run pytest --cov=mamba_agents
 
 # Format code
 uv run ruff format
@@ -631,7 +631,7 @@ uv run mkdocs build
 uv run mkdocs gh-deploy
 ```
 
-View the live documentation at [sequenzia.github.io/pydantic-agent](https://sequenzia.github.io/pydantic-agent).
+View the live documentation at [sequenzia.github.io/mamba-agents](https://sequenzia.github.io/mamba-agents).
 
 ## License
 

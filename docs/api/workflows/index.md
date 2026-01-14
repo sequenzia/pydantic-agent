@@ -14,8 +14,8 @@ Workflow orchestration for multi-step agent execution.
 ## Quick Example
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.workflows import ReActWorkflow, ReActConfig
+from mamba_agents import Agent
+from mamba_agents.workflows import ReActWorkflow, ReActConfig
 
 agent = Agent("gpt-4o", tools=[read_file, run_bash])
 workflow = ReActWorkflow(agent=agent, config=ReActConfig(max_iterations=10))
@@ -28,7 +28,7 @@ print(result.output)
 
 ```python
 # Main exports
-from pydantic_agent import (
+from mamba_agents import (
     Workflow,
     WorkflowConfig,
     WorkflowHooks,
@@ -38,7 +38,7 @@ from pydantic_agent import (
 )
 
 # ReAct workflow
-from pydantic_agent.workflows import (
+from mamba_agents.workflows import (
     ReActWorkflow,
     ReActConfig,
     ReActState,

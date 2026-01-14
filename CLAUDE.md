@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Pydantic Agent is a simple, extensible AI Agent framework built on pydantic-ai. It provides a thin wrapper around pydantic-ai that adds enterprise-grade infrastructure: configuration management, context compaction, token tracking, MCP integration, and observability.
+Mamba Agents is a simple, extensible AI Agent framework built on pydantic-ai. It provides a thin wrapper around pydantic-ai that adds enterprise-grade infrastructure: configuration management, context compaction, token tracking, MCP integration, and observability.
 
 ## Documentation & Context
 
@@ -33,7 +33,7 @@ uv sync
 uv run pytest
 
 # Run tests with coverage
-uv run pytest --cov=pydantic_agent
+uv run pytest --cov=mamba_agents
 
 # Run specific test file
 uv run pytest tests/unit/test_config.py
@@ -51,7 +51,7 @@ uv run ty check
 ## Architecture
 
 ```
-src/pydantic_agent/
+src/mamba_agents/
 ├── agent/           # Core agent (wraps pydantic-ai)
 ├── config/          # Configuration system (pydantic-settings)
 ├── tools/           # Built-in tools (filesystem, bash, glob, grep)
@@ -69,7 +69,7 @@ src/pydantic_agent/
 
 ```python
 # Main exports (context and token tracking built into Agent)
-from pydantic_agent import (
+from mamba_agents import (
     Agent, AgentSettings, AgentConfig, AgentResult,
     CompactionConfig, CompactionResult, ContextState,
     TokenUsage, UsageRecord, CostBreakdown,
@@ -78,42 +78,42 @@ from pydantic_agent import (
 )
 
 # Tools
-from pydantic_agent.tools import read_file, write_file, run_bash, glob_search, grep_search
+from mamba_agents.tools import read_file, write_file, run_bash, glob_search, grep_search
 
 # Context management (for standalone use)
-from pydantic_agent.context import ContextManager, CompactionConfig
+from mamba_agents.context import ContextManager, CompactionConfig
 
 # Token tracking (for standalone use)
-from pydantic_agent.tokens import TokenCounter, UsageTracker, CostEstimator
+from mamba_agents.tokens import TokenCounter, UsageTracker, CostEstimator
 
 # Workflows (for custom workflow implementations)
-from pydantic_agent.workflows import Workflow, WorkflowConfig, WorkflowHooks
+from mamba_agents.workflows import Workflow, WorkflowConfig, WorkflowHooks
 
 # ReAct workflow (built-in implementation)
-from pydantic_agent.workflows import ReActWorkflow, ReActConfig, ReActState, ReActHooks
+from mamba_agents.workflows import ReActWorkflow, ReActConfig, ReActState, ReActHooks
 
 # MCP integration
-from pydantic_agent.mcp import MCPClientManager, MCPServerConfig
+from mamba_agents.mcp import MCPClientManager, MCPServerConfig
 
 # Model backends
-from pydantic_agent.backends import create_ollama_backend, create_vllm_backend
+from mamba_agents.backends import create_ollama_backend, create_vllm_backend
 ```
 
 ## Configuration System
 
-Settings use the `AGENTS_` prefix with nested settings using double underscore (`__`):
+Settings use the `MAMBA_` prefix with nested settings using double underscore (`__`):
 
 ```bash
-AGENTS_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
-AGENTS_MODEL_BACKEND__MODEL=llama3.2
-AGENTS_LOGGING__LEVEL=DEBUG
-AGENTS_RETRY__RETRY_LEVEL=2
+MAMBA_MODEL_BACKEND__BASE_URL=http://localhost:11434/v1
+MAMBA_MODEL_BACKEND__MODEL=llama3.2
+MAMBA_LOGGING__LEVEL=DEBUG
+MAMBA_RETRY__RETRY_LEVEL=2
 ```
 
 Variables are loaded from (in priority order):
 1. Environment variables
 2. `.env` file (project-specific)
-3. `~/agents.env` (user-wide defaults)
+3. `~/mamba.env` (user-wide defaults)
 
 Configuration sources (priority order):
 1. Constructor arguments
@@ -154,14 +154,14 @@ def test_file_ops(tmp_sandbox: Path):
 
 | Purpose | Location |
 |---------|----------|
-| Root config class | `src/pydantic_agent/config/settings.py` |
-| Agent implementation | `src/pydantic_agent/agent/core.py` |
-| Agent config | `src/pydantic_agent/agent/config.py` |
-| Message conversion utils | `src/pydantic_agent/agent/message_utils.py` |
-| Built-in tools | `src/pydantic_agent/tools/` |
-| Context compaction | `src/pydantic_agent/context/compaction/` |
-| Workflow base classes | `src/pydantic_agent/workflows/base.py` |
-| Workflow config | `src/pydantic_agent/workflows/config.py` |
+| Root config class | `src/mamba_agents/config/settings.py` |
+| Agent implementation | `src/mamba_agents/agent/core.py` |
+| Agent config | `src/mamba_agents/agent/config.py` |
+| Message conversion utils | `src/mamba_agents/agent/message_utils.py` |
+| Built-in tools | `src/mamba_agents/tools/` |
+| Context compaction | `src/mamba_agents/context/compaction/` |
+| Workflow base classes | `src/mamba_agents/workflows/base.py` |
+| Workflow config | `src/mamba_agents/workflows/config.py` |
 | Test fixtures | `tests/conftest.py` |
 | Example config | `config.example.toml` |
 

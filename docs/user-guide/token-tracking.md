@@ -1,6 +1,6 @@
 # Token Tracking
 
-Pydantic Agent automatically tracks token usage and estimates costs across all agent runs.
+Mamba Agents automatically tracks token usage and estimates costs across all agent runs.
 
 ## Overview
 
@@ -16,7 +16,7 @@ Every time you run an agent, token usage is recorded:
 Token tracking is always enabled:
 
 ```python
-from pydantic_agent import Agent
+from mamba_agents import Agent
 
 agent = Agent("gpt-4o")
 
@@ -52,7 +52,7 @@ print(f"Model: {breakdown.model}")
 
 ### Default Pricing
 
-Pydantic Agent includes default pricing for common models:
+Mamba Agents includes default pricing for common models:
 
 | Model | Input (per 1M) | Output (per 1M) |
 |-------|----------------|-----------------|
@@ -69,7 +69,7 @@ Pydantic Agent includes default pricing for common models:
 Set custom rates via settings:
 
 ```python
-from pydantic_agent import AgentSettings
+from mamba_agents import AgentSettings
 
 settings = AgentSettings(
     cost_rates={
@@ -81,7 +81,7 @@ settings = AgentSettings(
 Or via environment:
 
 ```bash
-AGENTS_COST_RATES__MY_MODEL=0.001
+MAMBA_COST_RATES__MY_MODEL=0.001
 ```
 
 ## Usage History
@@ -133,7 +133,7 @@ For advanced use cases, use the token modules directly:
 ### TokenCounter
 
 ```python
-from pydantic_agent.tokens import TokenCounter
+from mamba_agents.tokens import TokenCounter
 
 counter = TokenCounter(encoding="cl100k_base")
 
@@ -151,7 +151,7 @@ count = counter.count_messages(messages)
 ### UsageTracker
 
 ```python
-from pydantic_agent.tokens import UsageTracker
+from mamba_agents.tokens import UsageTracker
 
 tracker = UsageTracker()
 
@@ -176,7 +176,7 @@ tracker.reset()
 ### CostEstimator
 
 ```python
-from pydantic_agent.tokens import CostEstimator
+from mamba_agents.tokens import CostEstimator
 
 estimator = CostEstimator()
 
@@ -203,8 +203,8 @@ all_rates = estimator.get_all_rates()
 Workflows track usage through the agent:
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.workflows import ReActWorkflow
+from mamba_agents import Agent
+from mamba_agents.workflows import ReActWorkflow
 
 agent = Agent("gpt-4o")
 workflow = ReActWorkflow(agent=agent)
@@ -238,7 +238,7 @@ agent.run_sync("Hello")
 Monitor usage in real-time with hooks:
 
 ```python
-from pydantic_agent import WorkflowHooks
+from mamba_agents import WorkflowHooks
 
 def log_usage(state, step):
     usage = state.context.get("usage", {})

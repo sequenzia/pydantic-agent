@@ -5,7 +5,7 @@ Result from agent execution, wrapping pydantic-ai's RunResult.
 ## Quick Example
 
 ```python
-from pydantic_agent import Agent
+from mamba_agents import Agent
 
 agent = Agent("gpt-4o")
 result = await agent.run("What is 2 + 2?")
@@ -34,7 +34,7 @@ all_msgs = result.all_messages()
 
 ## API Reference
 
-::: pydantic_agent.agent.result.AgentResult
+::: mamba_agents.agent.result.AgentResult
     options:
       show_root_heading: true
       show_source: true

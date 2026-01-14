@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from pydantic_agent.tools.filesystem import (
+from mamba_agents.tools.filesystem import (
     FilesystemSecurity,
     append_file,
     copy_file,

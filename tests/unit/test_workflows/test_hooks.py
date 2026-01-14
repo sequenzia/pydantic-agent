@@ -7,7 +7,7 @@ from typing import Any
 
 import pytest
 
-from pydantic_agent.workflows import (
+from mamba_agents.workflows import (
     Workflow,
     WorkflowConfig,
     WorkflowHooks,

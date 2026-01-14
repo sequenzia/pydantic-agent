@@ -5,9 +5,9 @@ Built-in implementation of the ReAct (Reasoning and Acting) pattern.
 ## Quick Example
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.workflows import ReActWorkflow, ReActConfig, ReActHooks
-from pydantic_agent.tools import read_file, run_bash
+from mamba_agents import Agent
+from mamba_agents.workflows import ReActWorkflow, ReActConfig, ReActHooks
+from mamba_agents.tools import read_file, run_bash
 
 agent = Agent("gpt-4o", tools=[read_file, run_bash])
 
@@ -50,22 +50,22 @@ Callbacks extending WorkflowHooks.
 
 ## API Reference
 
-::: pydantic_agent.workflows.react.workflow.ReActWorkflow
+::: mamba_agents.workflows.react.workflow.ReActWorkflow
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.workflows.react.config.ReActConfig
+::: mamba_agents.workflows.react.config.ReActConfig
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.workflows.react.state.ReActState
+::: mamba_agents.workflows.react.state.ReActState
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.workflows.react.hooks.ReActHooks
+::: mamba_agents.workflows.react.hooks.ReActHooks
     options:
       show_root_heading: true
       show_source: true

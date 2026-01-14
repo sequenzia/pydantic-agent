@@ -5,13 +5,13 @@ OpenTelemetry tracing and metrics.
 ## Prerequisites
 
 ```bash
-uv add pydantic-agent[otel]
+uv add mamba-agents[otel]
 ```
 
 ## Quick Example
 
 ```python
-from pydantic_agent.observability import get_otel_integration
+from mamba_agents.observability import get_otel_integration
 
 otel = get_otel_integration()
 
@@ -52,7 +52,7 @@ otel.add_span_processor(BatchSpanProcessor(
 ## Configuration
 
 ```python
-from pydantic_agent.config import ObservabilityConfig
+from mamba_agents.config import ObservabilityConfig
 
 config = ObservabilityConfig(
     enable_tracing=True,
@@ -62,11 +62,11 @@ config = ObservabilityConfig(
 
 ## API Reference
 
-::: pydantic_agent.observability.otel.OTelIntegration
+::: mamba_agents.observability.otel.OTelIntegration
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.observability.otel.get_otel_integration
+::: mamba_agents.observability.otel.get_otel_integration
     options:
       show_root_heading: true

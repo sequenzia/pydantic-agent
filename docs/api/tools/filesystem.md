@@ -18,7 +18,7 @@ File operations tools.
 ## Quick Example
 
 ```python
-from pydantic_agent.tools import (
+from mamba_agents.tools import (
     read_file,
     write_file,
     list_directory,
@@ -42,7 +42,7 @@ print(f"Size: {info.size}")
 ## Security
 
 ```python
-from pydantic_agent.tools.filesystem import FilesystemSecurity
+from mamba_agents.tools.filesystem import FilesystemSecurity
 
 security = FilesystemSecurity(
     sandbox_mode=True,
@@ -56,18 +56,18 @@ content = read_file("data.txt", security=security)
 
 ## API Reference
 
-::: pydantic_agent.tools.filesystem.read.read_file
+::: mamba_agents.tools.filesystem.read.read_file
     options:
       show_root_heading: true
 
-::: pydantic_agent.tools.filesystem.write.write_file
+::: mamba_agents.tools.filesystem.write.write_file
     options:
       show_root_heading: true
 
-::: pydantic_agent.tools.filesystem.directory.list_directory
+::: mamba_agents.tools.filesystem.directory.list_directory
     options:
       show_root_heading: true
 
-::: pydantic_agent.tools.filesystem.info.file_info
+::: mamba_agents.tools.filesystem.info.file_info
     options:
       show_root_heading: true

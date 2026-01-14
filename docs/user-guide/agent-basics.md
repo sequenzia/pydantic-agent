@@ -1,13 +1,13 @@
 # Agent Basics
 
-The `Agent` class is the core of Pydantic Agent. It wraps pydantic-ai's Agent with additional features for context management, token tracking, and more.
+The `Agent` class is the core of Mamba Agents. It wraps pydantic-ai's Agent with additional features for context management, token tracking, and more.
 
 ## Creating an Agent
 
 ### Simple Creation
 
 ```python
-from pydantic_agent import Agent
+from mamba_agents import Agent
 
 # Using a model string (requires OPENAI_API_KEY env var)
 agent = Agent("gpt-4o")
@@ -20,7 +20,7 @@ agent = Agent("anthropic:claude-3-5-sonnet-20241022")
 ### Using Settings
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 # Load settings from environment, .env, config files
 settings = AgentSettings()
@@ -35,7 +35,7 @@ agent = Agent("gpt-4o-mini", settings=settings)
 ### With Custom Configuration
 
 ```python
-from pydantic_agent import Agent, AgentConfig, CompactionConfig
+from mamba_agents import Agent, AgentConfig, CompactionConfig
 
 config = AgentConfig(
     system_prompt="You are a helpful assistant.",
@@ -157,8 +157,8 @@ agent = Agent("gpt-4o", system_prompt="You are a Python expert.")
 Register tools for the agent to use:
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.tools import read_file, run_bash
+from mamba_agents import Agent
+from mamba_agents.tools import read_file, run_bash
 
 # Pass tools at creation
 agent = Agent("gpt-4o", tools=[read_file, run_bash])

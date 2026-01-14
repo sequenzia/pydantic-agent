@@ -5,8 +5,8 @@ from __future__ import annotations
 import pytest
 from pydantic_ai.models.test import TestModel
 
-from pydantic_agent import Agent, AgentConfig, CompactionConfig
-from pydantic_agent.context import ContextManager
+from mamba_agents import Agent, AgentConfig, CompactionConfig
+from mamba_agents.context import ContextManager
 
 
 class TestAgentContextIntegration:
@@ -206,7 +206,7 @@ class TestAgentProperties:
     def test_model_name_with_string_model(self) -> None:
         """Test model_name when created with string model."""
         # Note: This would normally require settings, but we can test the attribute exists
-        from pydantic_agent import AgentSettings
+        from mamba_agents import AgentSettings
 
         settings = AgentSettings()
         agent: Agent[None, str] = Agent(settings=settings)

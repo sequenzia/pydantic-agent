@@ -13,7 +13,7 @@ Token counting and cost estimation.
 ## Quick Example
 
 ```python
-from pydantic_agent.tokens import TokenCounter, UsageTracker, CostEstimator
+from mamba_agents.tokens import TokenCounter, UsageTracker, CostEstimator
 
 # Count tokens
 counter = TokenCounter()
@@ -32,6 +32,6 @@ cost = estimator.estimate(usage, model="gpt-4o")
 ## Imports
 
 ```python
-from pydantic_agent import TokenUsage, UsageRecord, CostBreakdown
-from pydantic_agent.tokens import TokenCounter, UsageTracker, CostEstimator
+from mamba_agents import TokenUsage, UsageRecord, CostBreakdown
+from mamba_agents.tokens import TokenCounter, UsageTracker, CostEstimator
 ```

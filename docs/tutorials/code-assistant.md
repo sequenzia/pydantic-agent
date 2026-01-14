@@ -14,7 +14,7 @@ A code assistant that can:
 ## Prerequisites
 
 - Python 3.12+
-- Pydantic Agent installed
+- Mamba Agents installed
 - OpenAI API key (or local model)
 
 ## Step 1: Project Setup
@@ -23,8 +23,8 @@ Create a new file `code_assistant.py`:
 
 ```python
 import asyncio
-from pydantic_agent import Agent, AgentConfig, AgentSettings
-from pydantic_agent.tools import (
+from mamba_agents import Agent, AgentConfig, AgentSettings
+from mamba_agents.tools import (
     read_file,
     write_file,
     list_directory,

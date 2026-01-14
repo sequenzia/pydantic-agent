@@ -5,7 +5,7 @@ Configuration for context compaction.
 ## Quick Example
 
 ```python
-from pydantic_agent import CompactionConfig
+from mamba_agents import CompactionConfig
 
 config = CompactionConfig(
     strategy="hybrid",
@@ -37,7 +37,7 @@ config = CompactionConfig(
 
 ## API Reference
 
-::: pydantic_agent.context.config.CompactionConfig
+::: mamba_agents.context.config.CompactionConfig
     options:
       show_root_heading: true
       show_source: true

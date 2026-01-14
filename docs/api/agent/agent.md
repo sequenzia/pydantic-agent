@@ -5,7 +5,7 @@ The main agent class that wraps pydantic-ai with additional features.
 ## Quick Example
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 settings = AgentSettings()
 agent = Agent("gpt-4o", settings=settings)
@@ -21,7 +21,7 @@ print(agent.get_cost())
 
 ## API Reference
 
-::: pydantic_agent.agent.core.Agent
+::: mamba_agents.agent.core.Agent
     options:
       show_root_heading: true
       show_source: true

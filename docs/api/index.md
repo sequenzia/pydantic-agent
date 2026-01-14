@@ -1,11 +1,11 @@
 # API Reference
 
-Complete reference for all Pydantic Agent classes and functions.
+Complete reference for all Mamba Agents classes and functions.
 
 ## Main Package
 
 ```python
-from pydantic_agent import (
+from mamba_agents import (
     # Core
     Agent,
     AgentConfig,
@@ -70,20 +70,20 @@ from pydantic_agent import (
 
 ```python
 # Core functionality
-from pydantic_agent import Agent, AgentConfig, AgentSettings
+from mamba_agents import Agent, AgentConfig, AgentSettings
 
 # Tools
-from pydantic_agent.tools import read_file, write_file, run_bash
+from mamba_agents.tools import read_file, write_file, run_bash
 
 # Workflows
-from pydantic_agent.workflows import ReActWorkflow, ReActConfig
+from mamba_agents.workflows import ReActWorkflow, ReActConfig
 
 # Context (advanced)
-from pydantic_agent.context import ContextManager, CompactionConfig
+from mamba_agents.context import ContextManager, CompactionConfig
 
 # MCP
-from pydantic_agent.mcp import MCPClientManager, MCPServerConfig
+from mamba_agents.mcp import MCPClientManager, MCPServerConfig
 
 # Backends
-from pydantic_agent.backends import create_ollama_backend, get_profile
+from mamba_agents.backends import create_ollama_backend, get_profile
 ```

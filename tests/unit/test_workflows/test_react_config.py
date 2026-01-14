@@ -5,7 +5,7 @@ from __future__ import annotations
 import pytest
 from pydantic import ValidationError
 
-from pydantic_agent.workflows import ReActConfig, WorkflowConfig
+from mamba_agents.workflows import ReActConfig, WorkflowConfig
 
 
 class TestReActConfig:

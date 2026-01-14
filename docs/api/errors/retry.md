@@ -5,7 +5,7 @@ Retry decorators and utilities.
 ## Quick Example
 
 ```python
-from pydantic_agent.errors import create_retry_decorator
+from mamba_agents.errors import create_retry_decorator
 
 @create_retry_decorator(max_attempts=3, base_wait=1.0)
 async def call_api():
@@ -24,7 +24,7 @@ async def call_api():
 ## Configuration
 
 ```python
-from pydantic_agent.config import ErrorRecoveryConfig
+from mamba_agents.config import ErrorRecoveryConfig
 
 config = ErrorRecoveryConfig(
     retry_level=2,
@@ -38,7 +38,7 @@ config = ErrorRecoveryConfig(
 
 ## API Reference
 
-::: pydantic_agent.errors.retry.create_retry_decorator
+::: mamba_agents.errors.retry.create_retry_decorator
     options:
       show_root_heading: true
       show_source: true

@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This PRD defines the requirements for implementing a ReAct (Reasoning and Acting) workflow in the pydantic-agent framework. ReAct is an agentic paradigm that synergizes reasoning and acting by having LLMs generate verbal reasoning traces (thoughts) and task-specific actions in an interleaved manner, enabling dynamic reasoning and plan adjustment.
+This PRD defines the requirements for implementing a ReAct (Reasoning and Acting) workflow in the mamba-agents framework. ReAct is an agentic paradigm that synergizes reasoning and acting by having LLMs generate verbal reasoning traces (thoughts) and task-specific actions in an interleaved manner, enabling dynamic reasoning and plan adjustment.
 
 ---
 
@@ -46,9 +46,9 @@ The ReAct paradigm, introduced by Yao et al. (2023), combines chain-of-thought r
 ### 2.2 Example Usage
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.workflows import ReActWorkflow, ReActConfig
-from pydantic_agent.tools import read_file, run_bash, grep_search
+from mamba_agents import Agent
+from mamba_agents.workflows import ReActWorkflow, ReActConfig
+from mamba_agents.tools import read_file, run_bash, grep_search
 
 # Create agent with tools
 agent = Agent(
@@ -304,8 +304,8 @@ Remember:
 ### 4.1 Public API
 
 ```python
-# Main exports from pydantic_agent.workflows
-from pydantic_agent.workflows import (
+# Main exports from mamba_agents.workflows
+from mamba_agents.workflows import (
     # Existing exports...
     Workflow, WorkflowConfig, WorkflowHooks, WorkflowResult, WorkflowState, WorkflowStep,
 
@@ -349,7 +349,7 @@ class ReActWorkflow:
 ## 5. File Structure
 
 ```
-src/pydantic_agent/workflows/
+src/mamba_agents/workflows/
 ├── __init__.py           # Add ReAct exports
 ├── base.py               # Existing Workflow ABC
 ├── config.py             # Add ReActConfig
@@ -421,7 +421,7 @@ def test_react_basic_flow():
 ## 8. Implementation Plan
 
 ### Phase 1: Core Structure
-1. Create `src/pydantic_agent/workflows/react/` directory structure
+1. Create `src/mamba_agents/workflows/react/` directory structure
 2. Implement `ReActConfig` extending `WorkflowConfig`
 3. Implement `ReActState` and `ScratchpadEntry` dataclasses
 4. Add module exports to `workflows/__init__.py`
@@ -456,12 +456,12 @@ def test_react_basic_flow():
 
 | File | Purpose |
 |------|---------|
-| `src/pydantic_agent/workflows/react/workflow.py` | Main ReActWorkflow implementation |
-| `src/pydantic_agent/workflows/react/config.py` | ReActConfig (or in `workflows/config.py`) |
-| `src/pydantic_agent/workflows/react/state.py` | ReActState, ScratchpadEntry |
-| `src/pydantic_agent/workflows/react/termination.py` | Termination strategy classes |
-| `src/pydantic_agent/workflows/base.py` | Reference for Workflow ABC |
-| `src/pydantic_agent/agent/core.py` | Reference for Agent integration |
+| `src/mamba_agents/workflows/react/workflow.py` | Main ReActWorkflow implementation |
+| `src/mamba_agents/workflows/react/config.py` | ReActConfig (or in `workflows/config.py`) |
+| `src/mamba_agents/workflows/react/state.py` | ReActState, ScratchpadEntry |
+| `src/mamba_agents/workflows/react/termination.py` | Termination strategy classes |
+| `src/mamba_agents/workflows/base.py` | Reference for Workflow ABC |
+| `src/mamba_agents/agent/core.py` | Reference for Agent integration |
 | `tests/unit/test_workflows/test_react_workflow.py` | Main test file |
 
 ---
@@ -474,21 +474,21 @@ def test_react_basic_flow():
 uv run pytest tests/unit/test_workflows/test_react*.py -v
 
 # Check coverage
-uv run pytest tests/unit/test_workflows/test_react*.py --cov=pydantic_agent.workflows.react
+uv run pytest tests/unit/test_workflows/test_react*.py --cov=mamba_agents.workflows.react
 
 # Type check
-uv run ty check src/pydantic_agent/workflows/react/
+uv run ty check src/mamba_agents/workflows/react/
 
 # Lint
-uv run ruff check src/pydantic_agent/workflows/react/
+uv run ruff check src/mamba_agents/workflows/react/
 ```
 
 ### 10.2 Integration Verification
 ```python
 # Manual integration test script
-from pydantic_agent import Agent
-from pydantic_agent.workflows import ReActWorkflow, ReActConfig
-from pydantic_agent.tools import read_file
+from mamba_agents import Agent
+from mamba_agents.workflows import ReActWorkflow, ReActConfig
+from mamba_agents.tools import read_file
 
 agent = Agent("gpt-4o", tools=[read_file])
 workflow = ReActWorkflow(agent, config=ReActConfig(max_iterations=5))
@@ -546,4 +546,4 @@ The MVP implements only tool-based termination (via `final_answer` tool). Future
 - [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) (Yao et al., 2023)
 - [IBM: What is a ReAct Agent?](https://www.ibm.com/think/topics/react-agent)
 - [Prompt Engineering Guide: ReAct](https://www.promptingguide.ai/techniques/react)
-- Existing workflow implementation: `src/pydantic_agent/workflows/`
+- Existing workflow implementation: `src/mamba_agents/workflows/`

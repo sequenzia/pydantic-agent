@@ -5,7 +5,7 @@ Manage MCP server connections.
 ## Quick Example
 
 ```python
-from pydantic_agent.mcp import MCPClientManager, MCPServerConfig
+from mamba_agents.mcp import MCPClientManager, MCPServerConfig
 
 manager = MCPClientManager()
 
@@ -39,7 +39,7 @@ async with MCPClientManager(servers) as manager:
 
 ## API Reference
 
-::: pydantic_agent.mcp.client.MCPClientManager
+::: mamba_agents.mcp.client.MCPClientManager
     options:
       show_root_heading: true
       show_source: true

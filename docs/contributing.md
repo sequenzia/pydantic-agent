@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for your interest in contributing to Pydantic Agent!
+Thank you for your interest in contributing to Mamba Agents!
 
 ## Development Setup
 
@@ -13,8 +13,8 @@ Thank you for your interest in contributing to Pydantic Agent!
 
 ```bash
 # Clone the repository
-git clone https://github.com/sequenzia/pydantic-agent.git
-cd pydantic-agent
+git clone https://github.com/sequenzia/mamba-agents.git
+cd mamba-agents
 
 # Install dependencies
 uv sync --group dev
@@ -32,7 +32,7 @@ uv run pytest --version
 uv run pytest
 
 # Run with coverage
-uv run pytest --cov=pydantic_agent
+uv run pytest --cov=mamba_agents
 
 # Run specific test file
 uv run pytest tests/unit/test_config.py
@@ -160,7 +160,7 @@ refactor: simplify token counting
 ## Project Structure
 
 ```
-src/pydantic_agent/
+src/mamba_agents/
 ├── agent/           # Core agent
 ├── config/          # Configuration
 ├── context/         # Context management
@@ -188,8 +188,8 @@ docs/
 
 ## Getting Help
 
-- **Issues**: [GitHub Issues](https://github.com/sequenzia/pydantic-agent/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/sequenzia/pydantic-agent/discussions)
+- **Issues**: [GitHub Issues](https://github.com/sequenzia/mamba-agents/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/sequenzia/mamba-agents/discussions)
 
 ## License
 

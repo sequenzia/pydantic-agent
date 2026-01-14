@@ -13,7 +13,7 @@ Exception classes and error handling utilities.
 ## Quick Example
 
 ```python
-from pydantic_agent.errors import (
+from mamba_agents.errors import (
     AgentError,
     ModelBackendError,
     RateLimitError,
@@ -38,7 +38,7 @@ async with breaker:
 ## Imports
 
 ```python
-from pydantic_agent.errors import (
+from mamba_agents.errors import (
     AgentError,
     ModelBackendError,
     RateLimitError,

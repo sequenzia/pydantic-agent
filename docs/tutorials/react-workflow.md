@@ -13,7 +13,7 @@ Master the ReAct (Reasoning and Acting) workflow pattern for complex multi-step 
 ## Prerequisites
 
 - Python 3.12+
-- Pydantic Agent installed
+- Mamba Agents installed
 - Familiarity with basic agent concepts
 
 ## Understanding ReAct
@@ -30,9 +30,9 @@ ReAct implements an iterative reasoning loop:
 ## Step 1: Basic ReAct Setup
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.workflows import ReActWorkflow, ReActConfig
-from pydantic_agent.tools import read_file, run_bash, grep_search
+from mamba_agents import Agent
+from mamba_agents.workflows import ReActWorkflow, ReActConfig
+from mamba_agents.tools import read_file, run_bash, grep_search
 
 # Create agent with tools
 agent = Agent(
@@ -86,7 +86,7 @@ workflow = ReActWorkflow(agent=agent, config=config)
 ## Step 3: Adding Hooks for Observability
 
 ```python
-from pydantic_agent.workflows import ReActHooks
+from mamba_agents.workflows import ReActHooks
 
 def on_thought(state, thought):
     print(f"\n[THOUGHT] {thought[:100]}...")
@@ -174,9 +174,9 @@ for i, count in enumerate(result.state.context.iteration_token_counts):
 
 ```python
 import asyncio
-from pydantic_agent import Agent
-from pydantic_agent.workflows import ReActWorkflow, ReActConfig, ReActHooks
-from pydantic_agent.tools import read_file, list_directory, grep_search, run_bash
+from mamba_agents import Agent
+from mamba_agents.workflows import ReActWorkflow, ReActConfig, ReActHooks
+from mamba_agents.tools import read_file, list_directory, grep_search, run_bash
 
 
 async def main():

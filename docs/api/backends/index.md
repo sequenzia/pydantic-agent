@@ -12,7 +12,7 @@ Model backend adapters for OpenAI-compatible APIs.
 ## Quick Example
 
 ```python
-from pydantic_agent.backends import (
+from mamba_agents.backends import (
     create_ollama_backend,
     create_vllm_backend,
     create_lmstudio_backend,
@@ -32,7 +32,7 @@ print(f"Context: {profile.context_window}")
 ## Imports
 
 ```python
-from pydantic_agent.backends import (
+from mamba_agents.backends import (
     OpenAICompatibleBackend,
     create_ollama_backend,
     create_vllm_backend,

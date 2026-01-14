@@ -5,7 +5,7 @@ Token counting using tiktoken.
 ## Quick Example
 
 ```python
-from pydantic_agent.tokens import TokenCounter
+from mamba_agents.tokens import TokenCounter
 
 counter = TokenCounter(encoding="cl100k_base")
 
@@ -22,7 +22,7 @@ count = counter.count_messages(messages)
 
 ## API Reference
 
-::: pydantic_agent.tokens.counter.TokenCounter
+::: mamba_agents.tokens.counter.TokenCounter
     options:
       show_root_heading: true
       show_source: true

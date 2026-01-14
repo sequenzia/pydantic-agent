@@ -1,6 +1,6 @@
 # Error Handling
 
-Pydantic Agent provides robust error handling with retry logic and circuit breaker patterns.
+Mamba Agents provides robust error handling with retry logic and circuit breaker patterns.
 
 ## Overview
 
@@ -29,8 +29,8 @@ AgentError (base)
 ## Handling Exceptions
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.errors import (
+from mamba_agents import Agent
+from mamba_agents.errors import (
     AgentError,
     ModelBackendError,
     RateLimitError,
@@ -69,7 +69,7 @@ Three preset levels control retry aggressiveness:
 ### Setting Retry Level
 
 ```python
-from pydantic_agent import AgentSettings
+from mamba_agents import AgentSettings
 
 # Via settings
 settings = AgentSettings(
@@ -77,14 +77,14 @@ settings = AgentSettings(
 )
 
 # Via environment
-# AGENTS_RETRY__RETRY_LEVEL=2
-# AGENTS_RETRY__MAX_RETRIES=3
+# MAMBA_RETRY__RETRY_LEVEL=2
+# MAMBA_RETRY__MAX_RETRIES=3
 ```
 
 ### ErrorRecoveryConfig
 
 ```python
-from pydantic_agent.config import ErrorRecoveryConfig
+from mamba_agents.config import ErrorRecoveryConfig
 
 config = ErrorRecoveryConfig(
     retry_level=2,
@@ -101,7 +101,7 @@ config = ErrorRecoveryConfig(
 ### Using the Decorator
 
 ```python
-from pydantic_agent.errors import create_retry_decorator
+from mamba_agents.errors import create_retry_decorator
 
 @create_retry_decorator(max_attempts=3, base_wait=1.0)
 async def call_external_api():
@@ -130,7 +130,7 @@ The circuit breaker pattern prevents cascading failures:
 ### Basic Usage
 
 ```python
-from pydantic_agent.errors import CircuitBreaker
+from mamba_agents.errors import CircuitBreaker
 
 breaker = CircuitBreaker(
     name="model-api",
@@ -186,7 +186,7 @@ async def call_mcp():
 ### 1. Graceful Degradation
 
 ```python
-from pydantic_agent.errors import ModelBackendError
+from mamba_agents.errors import ModelBackendError
 
 async def get_response(query: str) -> str:
     try:
@@ -203,7 +203,7 @@ async def get_response(query: str) -> str:
 
 ```python
 import asyncio
-from pydantic_agent.errors import RateLimitError
+from mamba_agents.errors import RateLimitError
 
 async def resilient_call(agent, query):
     for attempt in range(3):
@@ -219,7 +219,7 @@ async def resilient_call(agent, query):
 ### 3. Circuit Breaker with Fallback
 
 ```python
-from pydantic_agent.errors import CircuitBreaker
+from mamba_agents.errors import CircuitBreaker
 
 breaker = CircuitBreaker("api", failure_threshold=3)
 

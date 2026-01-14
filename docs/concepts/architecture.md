@@ -1,6 +1,6 @@
 # Architecture Overview
 
-Pydantic Agent is a thin wrapper around pydantic-ai that adds enterprise-grade infrastructure.
+Mamba Agents is a thin wrapper around pydantic-ai that adds enterprise-grade infrastructure.
 
 ## High-Level Architecture
 
@@ -10,7 +10,7 @@ graph TB
         APP[Application Code]
     end
 
-    subgraph "Pydantic Agent"
+    subgraph "Mamba Agents"
         AGENT[Agent]
         CONFIG[AgentSettings]
 
@@ -59,7 +59,7 @@ graph TB
 ## Module Structure
 
 ```
-src/pydantic_agent/
+src/mamba_agents/
 ├── agent/           # Core agent (wraps pydantic-ai)
 │   ├── core.py      # Agent class
 │   ├── config.py    # AgentConfig
@@ -188,7 +188,7 @@ graph LR
 
 ### 1. Thin Wrapper
 
-Pydantic Agent doesn't reinvent pydantic-ai; it extends it:
+Mamba Agents doesn't reinvent pydantic-ai; it extends it:
 
 - Core agent logic delegates to pydantic-ai
 - Infrastructure layers are composable

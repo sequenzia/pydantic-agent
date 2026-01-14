@@ -13,7 +13,7 @@ The core agent module provides the main `Agent` class and related configuration.
 ## Quick Example
 
 ```python
-from pydantic_agent import Agent, AgentConfig, AgentSettings
+from mamba_agents import Agent, AgentConfig, AgentSettings
 
 # Simple usage
 agent = Agent("gpt-4o")
@@ -34,6 +34,6 @@ agent = Agent(settings=settings)
 ## Imports
 
 ```python
-from pydantic_agent import Agent, AgentConfig, AgentResult
-from pydantic_agent.agent import Agent, AgentConfig, AgentResult
+from mamba_agents import Agent, AgentConfig, AgentResult
+from mamba_agents.agent import Agent, AgentConfig, AgentResult
 ```

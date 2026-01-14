@@ -5,7 +5,7 @@ Execute shell commands.
 ## Quick Example
 
 ```python
-from pydantic_agent.tools import run_bash
+from mamba_agents.tools import run_bash
 
 # Run a command
 result = run_bash("ls -la")
@@ -35,11 +35,11 @@ if result.timed_out:
 
 ## API Reference
 
-::: pydantic_agent.tools.bash.run_bash
+::: mamba_agents.tools.bash.run_bash
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.tools.bash.BashResult
+::: mamba_agents.tools.bash.BashResult
     options:
       show_root_heading: true

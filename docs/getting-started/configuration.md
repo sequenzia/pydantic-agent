@@ -1,41 +1,41 @@
 # Configuration
 
-Pydantic Agent uses a layered configuration system that loads settings from multiple sources.
+Mamba Agents uses a layered configuration system that loads settings from multiple sources.
 
 ## Configuration Sources
 
 Settings are loaded in the following priority order (highest to lowest):
 
 1. **Constructor arguments** - Passed directly when creating an Agent
-2. **Environment variables** - Using the `AGENTS_` prefix
+2. **Environment variables** - Using the `MAMBA_` prefix
 3. **`.env` file** - Project-specific settings
-4. **`~/agents.env`** - User-wide defaults
+4. **`~/mamba.env`** - User-wide defaults
 5. **`config.toml` / `config.yaml`** - Configuration files
 6. **Default values** - Built-in defaults
 
 ## Environment Variables
 
-All settings use the `AGENTS_` prefix. Use double underscore (`__`) for nested settings:
+All settings use the `MAMBA_` prefix. Use double underscore (`__`) for nested settings:
 
 ```bash
 # Model configuration
-AGENTS_MODEL_BACKEND__MODEL=gpt-4o
-AGENTS_MODEL_BACKEND__API_KEY=sk-...
-AGENTS_MODEL_BACKEND__BASE_URL=https://api.openai.com/v1
-AGENTS_MODEL_BACKEND__TEMPERATURE=0.7
+MAMBA_MODEL_BACKEND__MODEL=gpt-4o
+MAMBA_MODEL_BACKEND__API_KEY=sk-...
+MAMBA_MODEL_BACKEND__BASE_URL=https://api.openai.com/v1
+MAMBA_MODEL_BACKEND__TEMPERATURE=0.7
 
 # Logging
-AGENTS_LOGGING__LEVEL=INFO
-AGENTS_LOGGING__FORMAT=json
+MAMBA_LOGGING__LEVEL=INFO
+MAMBA_LOGGING__FORMAT=json
 
 # Retry behavior
-AGENTS_RETRY__MAX_RETRIES=3
-AGENTS_RETRY__RETRY_LEVEL=2
+MAMBA_RETRY__MAX_RETRIES=3
+MAMBA_RETRY__RETRY_LEVEL=2
 
 # Context compaction
-AGENTS_CONTEXT__STRATEGY=hybrid
-AGENTS_CONTEXT__TRIGGER_THRESHOLD_TOKENS=100000
-AGENTS_CONTEXT__TARGET_TOKENS=80000
+MAMBA_CONTEXT__STRATEGY=hybrid
+MAMBA_CONTEXT__TRIGGER_THRESHOLD_TOKENS=100000
+MAMBA_CONTEXT__TARGET_TOKENS=80000
 ```
 
 ## .env Files
@@ -44,18 +44,18 @@ Create a `.env` file in your project directory:
 
 ```bash
 # .env
-AGENTS_MODEL_BACKEND__MODEL=gpt-4o
-AGENTS_MODEL_BACKEND__API_KEY=sk-your-api-key-here
+MAMBA_MODEL_BACKEND__MODEL=gpt-4o
+MAMBA_MODEL_BACKEND__API_KEY=sk-your-api-key-here
 
-AGENTS_LOGGING__LEVEL=DEBUG
+MAMBA_LOGGING__LEVEL=DEBUG
 ```
 
-For user-wide defaults, create `~/agents.env`:
+For user-wide defaults, create `~/mamba.env`:
 
 ```bash
-# ~/agents.env
-AGENTS_MODEL_BACKEND__API_KEY=sk-default-api-key
-AGENTS_LOGGING__LEVEL=INFO
+# ~/mamba.env
+MAMBA_MODEL_BACKEND__API_KEY=sk-default-api-key
+MAMBA_LOGGING__LEVEL=INFO
 ```
 
 ## TOML Configuration
@@ -120,7 +120,7 @@ context:
 Load settings programmatically:
 
 ```python
-from pydantic_agent import AgentSettings, Agent
+from mamba_agents import AgentSettings, Agent
 
 # Load from all sources (env, .env, config files)
 settings = AgentSettings()
@@ -178,7 +178,7 @@ agent = Agent(settings=settings)
 You can override settings when creating an agent:
 
 ```python
-from pydantic_agent import Agent, AgentSettings, AgentConfig, CompactionConfig
+from mamba_agents import Agent, AgentSettings, AgentConfig, CompactionConfig
 
 settings = AgentSettings()
 

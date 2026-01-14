@@ -5,7 +5,7 @@ Find files by pattern.
 ## Quick Example
 
 ```python
-from pydantic_agent.tools import glob_search
+from mamba_agents.tools import glob_search
 
 # Find Python files
 files = glob_search("**/*.py")
@@ -29,7 +29,7 @@ files = glob_search("**/*.{py,js,ts}")
 
 ## API Reference
 
-::: pydantic_agent.tools.glob.glob_search
+::: mamba_agents.tools.glob.glob_search
     options:
       show_root_heading: true
       show_source: true

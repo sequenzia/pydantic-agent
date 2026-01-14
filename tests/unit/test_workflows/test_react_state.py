@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import UTC, datetime
 
-from pydantic_agent.workflows import ReActConfig, ReActState, ScratchpadEntry
+from mamba_agents.workflows import ReActConfig, ReActState, ScratchpadEntry
 
 
 class TestScratchpadEntry:

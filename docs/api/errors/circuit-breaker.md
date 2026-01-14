@@ -5,7 +5,7 @@ Circuit breaker pattern for preventing cascading failures.
 ## Quick Example
 
 ```python
-from pydantic_agent.errors import CircuitBreaker
+from mamba_agents.errors import CircuitBreaker
 
 breaker = CircuitBreaker(
     name="model-api",
@@ -46,7 +46,7 @@ breaker.reset()
 
 ## API Reference
 
-::: pydantic_agent.errors.circuit_breaker.CircuitBreaker
+::: mamba_agents.errors.circuit_breaker.CircuitBreaker
     options:
       show_root_heading: true
       show_source: true

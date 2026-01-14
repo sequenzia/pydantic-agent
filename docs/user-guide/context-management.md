@@ -1,6 +1,6 @@
 # Context Management
 
-Pydantic Agent automatically tracks conversation context and provides strategies to manage long conversations.
+Mamba Agents automatically tracks conversation context and provides strategies to manage long conversations.
 
 ## Overview
 
@@ -16,7 +16,7 @@ As conversations grow, the context window can exceed model limits. The context m
 Context tracking is enabled by default:
 
 ```python
-from pydantic_agent import Agent
+from mamba_agents import Agent
 
 agent = Agent("gpt-4o")
 
@@ -57,7 +57,7 @@ if agent.should_compact():
 By default, context is automatically compacted when thresholds are reached:
 
 ```python
-from pydantic_agent import Agent, AgentConfig, CompactionConfig
+from mamba_agents import Agent, AgentConfig, CompactionConfig
 
 config = AgentConfig(
     auto_compact=True,  # Enabled by default
@@ -170,7 +170,7 @@ config = CompactionConfig(
 For advanced use cases, use ContextManager directly:
 
 ```python
-from pydantic_agent.context import ContextManager, CompactionConfig
+from mamba_agents.context import ContextManager, CompactionConfig
 
 # Create manager with config
 config = CompactionConfig(

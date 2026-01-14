@@ -1,4 +1,4 @@
-# Pydantic Agent
+# Mamba Agents
 
 A simple, extensible AI Agent framework built on [pydantic-ai](https://ai.pydantic.dev/).
 
@@ -7,21 +7,21 @@ A simple, extensible AI Agent framework built on [pydantic-ai](https://ai.pydant
 === "uv (recommended)"
 
     ```bash
-    uv add pydantic-agent
+    uv add mamba-agents
     ```
 
 === "pip"
 
     ```bash
-    pip install pydantic-agent
+    pip install mamba-agents
     ```
 
 ## Quick Start
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
-# Load settings from env vars, .env, ~/agents.env, config.toml
+# Load settings from env vars, .env, ~/mamba.env, config.toml
 settings = AgentSettings()
 
 # Create agent using settings
@@ -110,7 +110,7 @@ print(agent.get_cost())   # Cost in USD
 
 <div class="grid cards" markdown>
 
--   :material-rocket-launch: **New to Pydantic Agent?**
+-   :material-rocket-launch: **New to Mamba Agents?**
 
     ---
 
@@ -148,12 +148,12 @@ print(agent.get_cost())   # Cost in USD
 
 | Use Case | Import |
 |----------|--------|
-| Basic agent | `from pydantic_agent import Agent` |
-| With settings | `from pydantic_agent import Agent, AgentSettings` |
-| Built-in tools | `from pydantic_agent.tools import read_file, run_bash, glob_search` |
-| ReAct workflow | `from pydantic_agent.workflows import ReActWorkflow, ReActConfig` |
-| Token tracking | `from pydantic_agent.tokens import TokenCounter, CostEstimator` |
-| MCP servers | `from pydantic_agent.mcp import MCPClientManager, MCPServerConfig` |
+| Basic agent | `from mamba_agents import Agent` |
+| With settings | `from mamba_agents import Agent, AgentSettings` |
+| Built-in tools | `from mamba_agents.tools import read_file, run_bash, glob_search` |
+| ReAct workflow | `from mamba_agents.workflows import ReActWorkflow, ReActConfig` |
+| Token tracking | `from mamba_agents.tokens import TokenCounter, CostEstimator` |
+| MCP servers | `from mamba_agents.mcp import MCPClientManager, MCPServerConfig` |
 
 ## Explore the Docs
 
@@ -171,7 +171,7 @@ print(agent.get_cost())   # Cost in USD
 
     ---
 
-    Learn how to use all the features of Pydantic Agent.
+    Learn how to use all the features of Mamba Agents.
 
     [:octicons-arrow-right-24: User Guide](user-guide/index.md)
 

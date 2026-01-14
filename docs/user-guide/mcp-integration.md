@@ -1,6 +1,6 @@
 # MCP Integration
 
-Pydantic Agent supports the Model Context Protocol (MCP) for connecting to external tool servers.
+Mamba Agents supports the Model Context Protocol (MCP) for connecting to external tool servers.
 
 ## Overview
 
@@ -13,8 +13,8 @@ MCP allows your agent to use tools provided by external servers:
 ## Quick Start
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.mcp import MCPServerConfig, MCPClientManager
+from mamba_agents import Agent
+from mamba_agents.mcp import MCPServerConfig, MCPClientManager
 
 # Configure MCP servers
 servers = [
@@ -73,7 +73,7 @@ MCPServerConfig(
 ### API Key Authentication
 
 ```python
-from pydantic_agent.mcp import MCPServerConfig, MCPAuthConfig
+from mamba_agents.mcp import MCPServerConfig, MCPAuthConfig
 
 MCPServerConfig(
     name="secure-server",
@@ -107,7 +107,7 @@ MCPAuthConfig(
 ### Basic Usage
 
 ```python
-from pydantic_agent.mcp import MCPClientManager, MCPServerConfig
+from mamba_agents.mcp import MCPClientManager, MCPServerConfig
 
 manager = MCPClientManager()
 
@@ -252,7 +252,7 @@ MCPServerConfig(
 ## Error Handling
 
 ```python
-from pydantic_agent.mcp import MCPClientManager
+from mamba_agents.mcp import MCPClientManager
 
 try:
     async with MCPClientManager(servers) as manager:

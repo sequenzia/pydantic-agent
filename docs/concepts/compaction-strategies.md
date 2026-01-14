@@ -1,6 +1,6 @@
 # Context Compaction Strategies
 
-Deep dive into the 5 compaction strategies available in Pydantic Agent.
+Deep dive into the 5 compaction strategies available in Mamba Agents.
 
 ## Overview
 
@@ -33,7 +33,7 @@ graph LR
 ### Configuration
 
 ```python
-from pydantic_agent import CompactionConfig
+from mamba_agents import CompactionConfig
 
 config = CompactionConfig(
     strategy="sliding_window",
@@ -309,7 +309,7 @@ print(f"Saved: {result.tokens_before - result.tokens_after} tokens")
 Implement your own strategy:
 
 ```python
-from pydantic_agent.context.compaction import CompactionStrategy
+from mamba_agents.context.compaction import CompactionStrategy
 
 class MyStrategy(CompactionStrategy):
     def compact(self, messages, config):

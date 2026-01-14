@@ -15,7 +15,7 @@ The 5 available compaction strategies.
 ## Usage
 
 ```python
-from pydantic_agent import CompactionConfig
+from mamba_agents import CompactionConfig
 
 # Select strategy via config
 config = CompactionConfig(strategy="sliding_window")
@@ -27,22 +27,22 @@ config = CompactionConfig(strategy="hybrid")
 
 ## API Reference
 
-::: pydantic_agent.context.compaction.SlidingWindowStrategy
+::: mamba_agents.context.compaction.SlidingWindowStrategy
     options:
       show_root_heading: true
 
-::: pydantic_agent.context.compaction.SummarizeOlderStrategy
+::: mamba_agents.context.compaction.SummarizeOlderStrategy
     options:
       show_root_heading: true
 
-::: pydantic_agent.context.compaction.SelectivePruningStrategy
+::: mamba_agents.context.compaction.SelectivePruningStrategy
     options:
       show_root_heading: true
 
-::: pydantic_agent.context.compaction.ImportanceScoringStrategy
+::: mamba_agents.context.compaction.ImportanceScoringStrategy
     options:
       show_root_heading: true
 
-::: pydantic_agent.context.compaction.HybridStrategy
+::: mamba_agents.context.compaction.HybridStrategy
     options:
       show_root_heading: true

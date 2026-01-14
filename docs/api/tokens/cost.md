@@ -5,7 +5,7 @@ Estimate costs based on token usage.
 ## Quick Example
 
 ```python
-from pydantic_agent.tokens import CostEstimator
+from mamba_agents.tokens import CostEstimator
 
 estimator = CostEstimator()
 
@@ -35,11 +35,11 @@ all_rates = estimator.get_all_rates()
 
 ## API Reference
 
-::: pydantic_agent.tokens.cost.CostEstimator
+::: mamba_agents.tokens.cost.CostEstimator
     options:
       show_root_heading: true
       show_source: true
 
-::: pydantic_agent.tokens.cost.CostBreakdown
+::: mamba_agents.tokens.cost.CostBreakdown
     options:
       show_root_heading: true

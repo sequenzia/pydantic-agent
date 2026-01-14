@@ -1,4 +1,4 @@
-# Pydantic Agent Configuration
+# Mamba Agents Configuration
 # Copy this file to config.toml and customize as needed
 
 [model_backend]

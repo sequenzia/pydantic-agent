@@ -1,6 +1,6 @@
 # Concepts
 
-Deep dives into the architecture and design of Pydantic Agent.
+Deep dives into the architecture and design of Mamba Agents.
 
 ## Overview
 
@@ -44,11 +44,11 @@ Deep dives into the architecture and design of Pydantic Agent.
 
 ### Agent as a Thin Wrapper
 
-Pydantic Agent wraps [pydantic-ai](https://ai.pydantic.dev/) with additional infrastructure:
+Mamba Agents wraps [pydantic-ai](https://ai.pydantic.dev/) with additional infrastructure:
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                  Pydantic Agent                      │
+│                  Mamba Agents                      │
 │  ┌─────────────────────────────────────────────┐    │
 │  │              pydantic-ai Agent               │    │
 │  └─────────────────────────────────────────────┘    │
@@ -66,9 +66,9 @@ Settings load from multiple sources:
 
 ```
 1. Constructor arguments     (highest priority)
-2. Environment variables     AGENTS_*
+2. Environment variables     MAMBA_*
 3. .env file                 project-specific
-4. ~/agents.env              user-wide defaults
+4. ~/mamba.env              user-wide defaults
 5. config.toml / config.yaml file-based config
 6. Default values            (lowest priority)
 ```

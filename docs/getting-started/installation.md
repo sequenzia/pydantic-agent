@@ -10,20 +10,20 @@
 === "uv (recommended)"
 
     ```bash
-    uv add pydantic-agent
+    uv add mamba-agents
     ```
 
 === "pip"
 
     ```bash
-    pip install pydantic-agent
+    pip install mamba-agents
     ```
 
 === "From source"
 
     ```bash
-    git clone https://github.com/sequenzia/pydantic-agent.git
-    cd pydantic-agent
+    git clone https://github.com/sequenzia/mamba-agents.git
+    cd mamba-agents
     uv sync
     ```
 
@@ -36,13 +36,13 @@ For OpenTelemetry integration (tracing and metrics export):
 === "uv"
 
     ```bash
-    uv add pydantic-agent[otel]
+    uv add mamba-agents[otel]
     ```
 
 === "pip"
 
     ```bash
-    pip install pydantic-agent[otel]
+    pip install mamba-agents[otel]
     ```
 
 This installs:
@@ -52,7 +52,7 @@ This installs:
 
 ## Dependencies
 
-Pydantic Agent automatically installs the following core dependencies:
+Mamba Agents automatically installs the following core dependencies:
 
 | Package | Purpose |
 |---------|---------|
@@ -70,11 +70,11 @@ Pydantic Agent automatically installs the following core dependencies:
 After installation, verify everything is working:
 
 ```python
-from pydantic_agent import Agent, AgentSettings
+from mamba_agents import Agent, AgentSettings
 
 # Check version
-import pydantic_agent
-print(f"Pydantic Agent version: {pydantic_agent.__version__}")
+import mamba_agents
+print(f"Mamba Agents version: {mamba_agents.__version__}")
 
 # Create a simple agent (requires OPENAI_API_KEY)
 agent = Agent("gpt-4o")
@@ -84,12 +84,12 @@ print(result.output)
 
 ## Development Installation
 
-For contributing to Pydantic Agent:
+For contributing to Mamba Agents:
 
 ```bash
 # Clone the repository
-git clone https://github.com/sequenzia/pydantic-agent.git
-cd pydantic-agent
+git clone https://github.com/sequenzia/mamba-agents.git
+cd mamba-agents
 
 # Install with dev dependencies
 uv sync --group dev

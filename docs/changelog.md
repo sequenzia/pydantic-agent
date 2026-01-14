@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Pydantic Agent will be documented in this file.
+All notable changes to Mamba Agents will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -27,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Configuration
 - `AgentSettings` with multi-source configuration loading
-- Environment variable support (`AGENTS_*` prefix)
+- Environment variable support (`MAMBA_*` prefix)
 - `.env` file support (project and user-wide)
 - TOML and YAML configuration file support
 - `ModelBackendSettings` for model connection

@@ -4,7 +4,7 @@ Tools give your agent the ability to interact with external systems, files, and 
 
 ## Built-in Tools
 
-Pydantic Agent includes a set of production-ready tools:
+Mamba Agents includes a set of production-ready tools:
 
 ### Filesystem Tools
 
@@ -35,8 +35,8 @@ Pydantic Agent includes a set of production-ready tools:
 ## Using Built-in Tools
 
 ```python
-from pydantic_agent import Agent
-from pydantic_agent.tools import (
+from mamba_agents import Agent
+from mamba_agents.tools import (
     read_file,
     write_file,
     list_directory,
@@ -60,7 +60,7 @@ result = agent.run_sync("List all Python files in the current directory")
 ### File Operations
 
 ```python
-from pydantic_agent.tools import read_file, write_file, list_directory, file_info
+from mamba_agents.tools import read_file, write_file, list_directory, file_info
 
 # Read a file
 content = read_file("config.json")
@@ -81,7 +81,7 @@ print(f"Size: {info.size}, Modified: {info.modified}")
 ### Search Operations
 
 ```python
-from pydantic_agent.tools import glob_search, grep_search
+from mamba_agents.tools import glob_search, grep_search
 
 # Find files by pattern
 py_files = glob_search("**/*.py", root_dir="/project")
@@ -101,7 +101,7 @@ for match in matches:
 ### Shell Commands
 
 ```python
-from pydantic_agent.tools import run_bash
+from mamba_agents.tools import run_bash
 
 # Run a command
 result = run_bash("ls -la", timeout=30)
@@ -120,7 +120,7 @@ if result.timed_out:
 ### Using the Decorator
 
 ```python
-from pydantic_agent import Agent
+from mamba_agents import Agent
 
 agent = Agent("gpt-4o")
 
@@ -252,7 +252,7 @@ def format_data(
 Restrict filesystem operations to a safe directory:
 
 ```python
-from pydantic_agent.tools.filesystem import FilesystemSecurity
+from mamba_agents.tools.filesystem import FilesystemSecurity
 
 # Create security context
 security = FilesystemSecurity(
@@ -262,7 +262,7 @@ security = FilesystemSecurity(
 )
 
 # Tools will respect the sandbox
-from pydantic_agent.tools import read_file, write_file
+from mamba_agents.tools import read_file, write_file
 
 # This works - within sandbox
 content = read_file("data.txt", security=security)
@@ -284,7 +284,7 @@ content = read_file("/etc/passwd", security=security)  # Raises error
 For organizing many tools:
 
 ```python
-from pydantic_agent.tools import ToolRegistry
+from mamba_agents.tools import ToolRegistry
 
 registry = ToolRegistry()
 

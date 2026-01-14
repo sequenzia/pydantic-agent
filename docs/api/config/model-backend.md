@@ -5,10 +5,10 @@ Model connection configuration.
 ## Quick Example
 
 ```python
-from pydantic_agent.config import ModelBackendSettings
+from mamba_agents.config import ModelBackendSettings
 
 # Via AgentSettings
-from pydantic_agent import AgentSettings
+from mamba_agents import AgentSettings
 settings = AgentSettings(
     model_backend={
         "base_url": "http://localhost:11434/v1",
@@ -33,15 +33,15 @@ settings = AgentSettings(
 ## Environment Variables
 
 ```bash
-AGENTS_MODEL_BACKEND__BASE_URL=https://api.openai.com/v1
-AGENTS_MODEL_BACKEND__MODEL=gpt-4o
-AGENTS_MODEL_BACKEND__API_KEY=sk-...
-AGENTS_MODEL_BACKEND__TEMPERATURE=0.7
+MAMBA_MODEL_BACKEND__BASE_URL=https://api.openai.com/v1
+MAMBA_MODEL_BACKEND__MODEL=gpt-4o
+MAMBA_MODEL_BACKEND__API_KEY=sk-...
+MAMBA_MODEL_BACKEND__TEMPERATURE=0.7
 ```
 
 ## API Reference
 
-::: pydantic_agent.config.model_backend.ModelBackendSettings
+::: mamba_agents.config.model_backend.ModelBackendSettings
     options:
       show_root_heading: true
       show_source: true

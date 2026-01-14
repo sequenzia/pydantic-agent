@@ -5,7 +5,7 @@ Lifecycle callbacks for workflow observability.
 ## Quick Example
 
 ```python
-from pydantic_agent import WorkflowHooks
+from mamba_agents import WorkflowHooks
 
 def log_step(state, step):
     print(f"Step {step.step_number}: {step.description}")
@@ -37,7 +37,7 @@ hooks = WorkflowHooks(
 
 ## API Reference
 
-::: pydantic_agent.workflows.hooks.WorkflowHooks
+::: mamba_agents.workflows.hooks.WorkflowHooks
     options:
       show_root_heading: true
       show_source: true

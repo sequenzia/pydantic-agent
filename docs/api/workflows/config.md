@@ -5,7 +5,7 @@ Base configuration for workflows.
 ## Quick Example
 
 ```python
-from pydantic_agent import WorkflowConfig
+from mamba_agents import WorkflowConfig
 
 config = WorkflowConfig(
     max_steps=50,
@@ -30,7 +30,7 @@ config = WorkflowConfig(
 
 ## API Reference
 
-::: pydantic_agent.workflows.config.WorkflowConfig
+::: mamba_agents.workflows.config.WorkflowConfig
     options:
       show_root_heading: true
       show_source: true

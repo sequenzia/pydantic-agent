@@ -7,7 +7,7 @@ from typing import Any
 
 import pytest
 
-from pydantic_agent.workflows import ReActHooks, ReActState, WorkflowHooks
+from mamba_agents.workflows import ReActHooks, ReActState, WorkflowHooks
 
 
 class TestReActHooks:
@@ -177,9 +177,7 @@ class TestReActHooks:
         async def async_thought_hook(state: ReActState, thought: str) -> None:
             called.append(("thought", thought))
 
-        async def async_action_hook(
-            state: ReActState, name: str, args: dict
-        ) -> None:
+        async def async_action_hook(state: ReActState, name: str, args: dict) -> None:
             called.append(("action", name))
 
         hooks = ReActHooks(

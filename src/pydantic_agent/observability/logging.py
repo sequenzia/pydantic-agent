@@ -164,9 +164,7 @@ def setup_logging(
 
     # Set formatter
     if config.format == "json":
-        formatter: logging.Formatter = StructuredFormatter(
-            include_extras=config.include_timestamps
-        )
+        formatter: logging.Formatter = StructuredFormatter(include_extras=config.include_timestamps)
     else:
         fmt = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
         formatter = logging.Formatter(fmt)

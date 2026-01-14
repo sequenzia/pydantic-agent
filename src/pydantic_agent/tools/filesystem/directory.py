@@ -68,11 +68,13 @@ def list_directory(
 
         except PermissionError:
             # Skip entries we can't access
-            entries.append({
-                "name": entry_path.name,
-                "path": str(entry_path),
-                "error": "Permission denied",
-            })
+            entries.append(
+                {
+                    "name": entry_path.name,
+                    "path": str(entry_path),
+                    "error": "Permission denied",
+                }
+            )
 
     for entry in validated_path.iterdir():
         process_entry(entry, 1)

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import datetime
 from typing import TYPE_CHECKING
 
@@ -71,7 +71,7 @@ class UsageTracker:
 
     def record_usage(
         self,
-        usage: "Usage",
+        usage: Usage,
         model: str | None = None,
         tool_name: str | None = None,
     ) -> None:
@@ -84,8 +84,12 @@ class UsageTracker:
         """
         # Extract token counts from pydantic-ai Usage
         # Use new API (input_tokens/output_tokens) with fallback to deprecated names
-        prompt_tokens = getattr(usage, "input_tokens", None) or getattr(usage, "request_tokens", None) or 0
-        completion_tokens = getattr(usage, "output_tokens", None) or getattr(usage, "response_tokens", None) or 0
+        prompt_tokens = (
+            getattr(usage, "input_tokens", None) or getattr(usage, "request_tokens", None) or 0
+        )
+        completion_tokens = (
+            getattr(usage, "output_tokens", None) or getattr(usage, "response_tokens", None) or 0
+        )
         total_tokens = usage.total_tokens or (prompt_tokens + completion_tokens)
 
         record = UsageRecord(

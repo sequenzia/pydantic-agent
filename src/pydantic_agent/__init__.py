@@ -19,6 +19,14 @@ from pydantic_agent.context.compaction import CompactionResult
 from pydantic_agent.context.config import CompactionConfig
 from pydantic_agent.tokens.cost import CostBreakdown
 from pydantic_agent.tokens.tracker import TokenUsage, UsageRecord
+from pydantic_agent.workflows import (
+    Workflow,
+    WorkflowConfig,
+    WorkflowHooks,
+    WorkflowResult,
+    WorkflowState,
+    WorkflowStep,
+)
 
 __all__ = [
     # Core
@@ -34,6 +42,13 @@ __all__ = [
     "CostBreakdown",
     "TokenUsage",
     "UsageRecord",
+    # Workflows
+    "Workflow",
+    "WorkflowConfig",
+    "WorkflowHooks",
+    "WorkflowResult",
+    "WorkflowState",
+    "WorkflowStep",
 ]
 
 __version__ = "0.1.0"

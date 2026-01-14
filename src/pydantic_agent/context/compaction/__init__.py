@@ -10,9 +10,9 @@ from pydantic_agent.context.compaction.summarize import SummarizeOlderStrategy
 __all__ = [
     "CompactionResult",
     "CompactionStrategy",
+    "HybridStrategy",
+    "ImportanceScoringStrategy",
+    "SelectivePruningStrategy",
     "SlidingWindowStrategy",
     "SummarizeOlderStrategy",
-    "SelectivePruningStrategy",
-    "ImportanceScoringStrategy",
-    "HybridStrategy",
 ]

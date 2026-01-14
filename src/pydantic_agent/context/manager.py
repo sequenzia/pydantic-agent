@@ -16,7 +16,7 @@ from pydantic_agent.context.history import MessageHistory
 from pydantic_agent.tokens import TokenCounter
 
 if TYPE_CHECKING:
-    from pydantic_ai import Agent
+    pass
 
 
 @dataclass

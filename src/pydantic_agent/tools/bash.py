@@ -118,7 +118,7 @@ async def run_bash_async(
             stderr=stderr.decode(),
             return_code=proc.returncode or 0,
         )
-    except asyncio.TimeoutError:
+    except TimeoutError:
         proc.kill()
         await proc.wait()
         return BashResult(

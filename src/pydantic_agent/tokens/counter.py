@@ -31,7 +31,7 @@ class TokenCounter:
     Token counts are approximate and may vary from actual model tokenization.
     """
 
-    def __init__(self, config: "TokenizerConfig | None" = None) -> None:
+    def __init__(self, config: TokenizerConfig | None = None) -> None:
         """Initialize the token counter.
 
         Args:

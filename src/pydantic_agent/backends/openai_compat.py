@@ -65,9 +65,7 @@ class OpenAICompatibleBackend(ModelBackend):
         # Handle SecretStr
         if api_key is not None:
             self._api_key = (
-                api_key.get_secret_value()
-                if hasattr(api_key, "get_secret_value")
-                else str(api_key)
+                api_key.get_secret_value() if hasattr(api_key, "get_secret_value") else str(api_key)
             )
         else:
             self._api_key = None
@@ -184,9 +182,7 @@ class OpenAICompatibleBackend(ModelBackend):
         )
 
         try:
-            async with self._client.stream(
-                "POST", "/chat/completions", json=payload
-            ) as response:
+            async with self._client.stream("POST", "/chat/completions", json=payload) as response:
                 self._check_response(response)
 
                 async for line in response.aiter_lines():

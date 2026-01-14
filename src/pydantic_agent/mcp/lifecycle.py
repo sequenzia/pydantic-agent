@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 
-import asyncio
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from pydantic_ai.mcp import MCPServer
@@ -48,14 +47,14 @@ class ServerLifecycleManager:
 
     def __init__(self) -> None:
         """Initialize the lifecycle manager."""
-        self._servers: dict[str, "MCPServer"] = {}
+        self._servers: dict[str, MCPServer] = {}
         self._states: dict[str, ServerState] = {}
         self._errors: dict[str, str] = {}
 
     async def start_server(
         self,
-        config: "MCPServerConfig",
-    ) -> "MCPServer":
+        config: MCPServerConfig,
+    ) -> MCPServer:
         """Start an MCP server based on configuration.
 
         Args:
@@ -152,7 +151,7 @@ class ServerLifecycleManager:
         """
         return [self.get_status(name) for name in self._states]
 
-    def get_server(self, name: str) -> "MCPServer | None":
+    def get_server(self, name: str) -> MCPServer | None:
         """Get a running server by name.
 
         Args:
@@ -163,7 +162,7 @@ class ServerLifecycleManager:
         """
         return self._servers.get(name)
 
-    def get_all_servers(self) -> list["MCPServer"]:
+    def get_all_servers(self) -> list[MCPServer]:
         """Get all running servers.
 
         Returns:

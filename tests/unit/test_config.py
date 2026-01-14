@@ -271,7 +271,9 @@ class TestAgentSettings:
         # But other TOML values should still be loaded
         assert settings.model_backend.model == "llama3.2"
 
-    def test_model_dump_excludes_secrets(self, tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    def test_model_dump_excludes_secrets(
+        self, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    ) -> None:
         """Test that model dump properly handles secrets."""
         monkeypatch.chdir(tmp_path)
         settings = AgentSettings(_env_file=None)

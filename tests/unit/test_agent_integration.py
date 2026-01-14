@@ -65,9 +65,7 @@ class TestAgentContextIntegration:
         with pytest.raises(RuntimeError, match="Context tracking is disabled"):
             await agent.compact()
 
-    def test_get_token_count_without_text_raises_when_disabled(
-        self, test_model: TestModel
-    ) -> None:
+    def test_get_token_count_without_text_raises_when_disabled(self, test_model: TestModel) -> None:
         """Test that get_token_count without text raises when context tracking disabled."""
         config = AgentConfig(track_context=False)
         agent: Agent[None, str] = Agent(test_model, config=config)
@@ -75,9 +73,7 @@ class TestAgentContextIntegration:
         with pytest.raises(RuntimeError, match="Context tracking is disabled"):
             agent.get_token_count()
 
-    def test_get_token_count_with_text_works_when_disabled(
-        self, test_model: TestModel
-    ) -> None:
+    def test_get_token_count_with_text_works_when_disabled(self, test_model: TestModel) -> None:
         """Test that get_token_count with text works even when context tracking disabled."""
         config = AgentConfig(track_context=False)
         agent: Agent[None, str] = Agent(test_model, config=config)
@@ -106,9 +102,7 @@ class TestAgentContextIntegration:
         state = agent.get_context_state()
         assert state is not None
 
-    def test_system_prompt_propagates_to_context_manager(
-        self, test_model: TestModel
-    ) -> None:
+    def test_system_prompt_propagates_to_context_manager(self, test_model: TestModel) -> None:
         """Test that system prompt is set in context manager."""
         config = AgentConfig(system_prompt="You are a helpful assistant.")
         agent: Agent[None, str] = Agent(test_model, config=config)
@@ -314,9 +308,7 @@ class TestAgentRunIntegration:
         # Messages should accumulate
         assert after_second > initial_count
 
-    def test_explicit_message_history_overrides_internal(
-        self, test_model: TestModel
-    ) -> None:
+    def test_explicit_message_history_overrides_internal(self, test_model: TestModel) -> None:
         """Test that explicit message_history overrides internal context."""
         model = TestModel(custom_output_text="Hello!")
         agent: Agent[None, str] = Agent(model)

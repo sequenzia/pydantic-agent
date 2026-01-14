@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, ClassVar
+from typing import Any
 
 from pydantic import Field
 from pydantic_settings import (
@@ -118,7 +118,7 @@ class AgentSettings(BaseSettings):
     )
 
     @classmethod
-    def from_file(cls, path: str | Path) -> "AgentSettings":
+    def from_file(cls, path: str | Path) -> AgentSettings:
         """Load settings from a specific configuration file.
 
         Args:

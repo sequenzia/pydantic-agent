@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 import time
 from collections import deque
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from enum import Enum
 from typing import Any, Generic, TypeVar
 
@@ -79,8 +79,7 @@ class CircuitBreakerOpenError(Exception):
         self.circuit_name = circuit_name
         self.time_until_retry = time_until_retry
         super().__init__(
-            f"Circuit '{circuit_name}' is open. "
-            f"Retry in {time_until_retry:.1f} seconds."
+            f"Circuit '{circuit_name}' is open. Retry in {time_until_retry:.1f} seconds."
         )
 
 

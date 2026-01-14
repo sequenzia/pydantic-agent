@@ -5,4 +5,4 @@ from pydantic_agent.tokens.cost import CostEstimator
 from pydantic_agent.tokens.counter import TokenCounter
 from pydantic_agent.tokens.tracker import UsageTracker
 
-__all__ = ["TokenCounter", "UsageTracker", "CostEstimator", "TokenizerConfig"]
+__all__ = ["CostEstimator", "TokenCounter", "TokenizerConfig", "UsageTracker"]

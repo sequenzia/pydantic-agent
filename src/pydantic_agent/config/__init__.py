@@ -9,9 +9,9 @@ from pydantic_agent.config.streaming import StreamingConfig
 
 __all__ = [
     "AgentSettings",
-    "ModelBackendSettings",
-    "LoggingConfig",
-    "ObservabilityConfig",
     "ErrorRecoveryConfig",
+    "LoggingConfig",
+    "ModelBackendSettings",
+    "ObservabilityConfig",
     "StreamingConfig",
 ]

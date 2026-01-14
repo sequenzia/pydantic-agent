@@ -2,12 +2,10 @@
 
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Any, Generic, TypeVar
 
 from pydantic import BaseModel
-
 
 T = TypeVar("T")
 
@@ -41,7 +39,7 @@ class ToolResult(Generic[T]):
     error: str | None = None
 
     @classmethod
-    def ok(cls, data: T) -> "ToolResult[T]":
+    def ok(cls, data: T) -> ToolResult[T]:
         """Create a successful result.
 
         Args:
@@ -53,7 +51,7 @@ class ToolResult(Generic[T]):
         return cls(success=True, data=data)
 
     @classmethod
-    def fail(cls, error: str) -> "ToolResult[Any]":
+    def fail(cls, error: str) -> ToolResult[Any]:
         """Create a failed result.
 
         Args:

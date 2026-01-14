@@ -19,7 +19,7 @@ class SummarizeOlderStrategy(CompactionStrategy):
 
     def __init__(
         self,
-        summarization_agent: "Agent[Any, str] | None" = None,
+        summarization_agent: Agent[Any, str] | None = None,
     ) -> None:
         """Initialize the summarization strategy.
 
@@ -115,9 +115,7 @@ class SummarizeOlderStrategy(CompactionStrategy):
         formatted = self._format_for_summary(messages)
 
         # Use agent to summarize
-        result = await self._agent.run(
-            f"Summarize this conversation concisely:\n\n{formatted}"
-        )
+        result = await self._agent.run(f"Summarize this conversation concisely:\n\n{formatted}")
         return result.output
 
     def _simple_summary(self, messages: list[dict[str, Any]]) -> str:
@@ -130,9 +128,7 @@ class SummarizeOlderStrategy(CompactionStrategy):
             Simple summary.
         """
         user_messages = [m for m in messages if m.get("role") == "user"]
-        tool_calls = [
-            m for m in messages if m.get("role") == "assistant" and m.get("tool_calls")
-        ]
+        tool_calls = [m for m in messages if m.get("role") == "assistant" and m.get("tool_calls")]
 
         summary_parts = [f"Conversation with {len(messages)} messages."]
 

@@ -19,7 +19,7 @@ class ImportanceScoringStrategy(CompactionStrategy):
 
     def __init__(
         self,
-        scoring_agent: "Agent[Any, str] | None" = None,
+        scoring_agent: Agent[Any, str] | None = None,
     ) -> None:
         """Initialize the importance scoring strategy.
 

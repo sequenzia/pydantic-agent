@@ -35,7 +35,7 @@ class MCPClientManager:
         """
         self._configs.append(config)
 
-    async def connect_all(self) -> list["MCPServer"]:
+    async def connect_all(self) -> list[MCPServer]:
         """Connect to all configured servers.
 
         Returns:
@@ -54,7 +54,7 @@ class MCPClientManager:
         """Disconnect from all servers."""
         await self._lifecycle.stop_all()
 
-    def get_toolsets(self) -> list["MCPServer"]:
+    def get_toolsets(self) -> list[MCPServer]:
         """Get MCP servers as toolsets for pydantic-ai Agent.
 
         Returns:
@@ -62,7 +62,7 @@ class MCPClientManager:
         """
         return self._lifecycle.get_all_servers()
 
-    def get_server(self, name: str) -> "MCPServer | None":
+    def get_server(self, name: str) -> MCPServer | None:
         """Get a specific server by name.
 
         Args:
@@ -92,7 +92,7 @@ class MCPClientManager:
         """
         return self._lifecycle.get_all_statuses()
 
-    async def __aenter__(self) -> "MCPClientManager":
+    async def __aenter__(self) -> MCPClientManager:
         """Async context manager entry - connect all servers."""
         await self.connect_all()
         return self

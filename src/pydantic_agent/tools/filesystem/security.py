@@ -86,6 +86,4 @@ class FilesystemSecurity(BaseModel):
         if self.max_file_size is not None and path.is_file():
             size = path.stat().st_size
             if size > self.max_file_size:
-                raise PermissionError(
-                    f"File size {size} exceeds maximum {self.max_file_size}"
-                )
+                raise PermissionError(f"File size {size} exceeds maximum {self.max_file_size}")

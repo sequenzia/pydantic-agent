@@ -16,15 +16,15 @@ from pydantic_agent.observability.tracing import (
 )
 
 __all__ = [
-    "setup_logging",
     "AgentLogger",
-    "SensitiveDataFilter",
-    "StructuredFormatter",
+    "OTelIntegration",
     "RequestTracer",
+    "SensitiveDataFilter",
     "Span",
     "SpanData",
+    "StructuredFormatter",
     "TraceContext",
     "get_current_trace",
-    "OTelIntegration",
     "get_otel_integration",
+    "setup_logging",
 ]

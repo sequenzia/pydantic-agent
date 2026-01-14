@@ -8,11 +8,8 @@ from contextvars import ContextVar
 from dataclasses import dataclass, field
 from typing import Any
 
-
 # Context variable for request tracking
-_current_trace: ContextVar[TraceContext | None] = ContextVar(
-    "current_trace", default=None
-)
+_current_trace: ContextVar[TraceContext | None] = ContextVar("current_trace", default=None)
 
 
 @dataclass

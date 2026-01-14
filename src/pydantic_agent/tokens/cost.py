@@ -89,7 +89,7 @@ class CostEstimator:
 
     def estimate(
         self,
-        usage: "TokenUsage",
+        usage: TokenUsage,
         model: str | None = None,
     ) -> CostBreakdown:
         """Estimate cost for token usage.

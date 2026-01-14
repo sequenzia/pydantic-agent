@@ -7,7 +7,6 @@ from typing import Any
 from pydantic_agent.context.compaction.base import CompactionResult, CompactionStrategy
 from pydantic_agent.context.compaction.selective import SelectivePruningStrategy
 from pydantic_agent.context.compaction.sliding_window import SlidingWindowStrategy
-from pydantic_agent.context.compaction.summarize import SummarizeOlderStrategy
 
 
 class HybridStrategy(CompactionStrategy):

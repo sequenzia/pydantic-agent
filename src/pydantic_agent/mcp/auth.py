@@ -10,7 +10,7 @@ if TYPE_CHECKING:
     from pydantic_agent.mcp.config import MCPAuthConfig
 
 
-def resolve_auth_key(auth: "MCPAuthConfig") -> str | None:
+def resolve_auth_key(auth: MCPAuthConfig) -> str | None:
     """Resolve the API key from authentication configuration.
 
     Handles both direct keys and environment variable references.
@@ -47,7 +47,7 @@ def resolve_auth_key(auth: "MCPAuthConfig") -> str | None:
     return None
 
 
-def build_auth_headers(auth: "MCPAuthConfig") -> dict[str, str]:
+def build_auth_headers(auth: MCPAuthConfig) -> dict[str, str]:
     """Build authentication headers for MCP requests.
 
     Args:

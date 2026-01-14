@@ -110,9 +110,7 @@ class SelectivePruningStrategy(CompactionStrategy):
             strategy=self.name,
         )
 
-    def _find_tool_call_pairs(
-        self, messages: list[dict[str, Any]]
-    ) -> list[tuple[int, int]]:
+    def _find_tool_call_pairs(self, messages: list[dict[str, Any]]) -> list[tuple[int, int]]:
         """Find indices of tool call and result pairs.
 
         Args:

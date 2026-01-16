@@ -2,13 +2,10 @@
 
 from __future__ import annotations
 
-import warnings
-
 import pytest
 from pydantic_ai.mcp import MCPServerSSE, MCPServerStdio
 
 from mamba_agents.mcp import MCPClientManager, MCPServerConfig
-from mamba_agents.mcp.lifecycle import ServerState
 
 
 class TestMCPClientManager:
@@ -134,72 +131,3 @@ class TestMCPClientManagerAsToolsets:
 
         with pytest.raises(ValueError, match="URL required for SSE transport"):
             manager.as_toolsets()
-
-
-class TestMCPClientManagerDeprecations:
-    """Tests for deprecated methods."""
-
-    def test_connect_all_deprecated(self) -> None:
-        """Test that connect_all emits deprecation warning."""
-        manager = MCPClientManager()
-        with warnings.catch_warnings(record=True) as w:
-            warnings.simplefilter("always")
-            # This will fail without MCP server, but we just want to check the warning
-            try:
-                import asyncio
-
-                asyncio.run(manager.connect_all())
-            except Exception:
-                pass
-
-            # Check that deprecation warning was issued
-            deprecation_warnings = [x for x in w if issubclass(x.category, DeprecationWarning)]
-            assert len(deprecation_warnings) >= 1
-            assert "deprecated" in str(deprecation_warnings[0].message).lower()
-
-    def test_disconnect_all_deprecated(self) -> None:
-        """Test that disconnect_all emits deprecation warning."""
-        manager = MCPClientManager()
-        with warnings.catch_warnings(record=True) as w:
-            warnings.simplefilter("always")
-            import asyncio
-
-            asyncio.run(manager.disconnect_all())
-
-            deprecation_warnings = [x for x in w if issubclass(x.category, DeprecationWarning)]
-            assert len(deprecation_warnings) >= 1
-            assert "deprecated" in str(deprecation_warnings[0].message).lower()
-
-    def test_get_toolsets_deprecated(self) -> None:
-        """Test that get_toolsets emits deprecation warning."""
-        manager = MCPClientManager()
-        with warnings.catch_warnings(record=True) as w:
-            warnings.simplefilter("always")
-            manager.get_toolsets()
-
-            deprecation_warnings = [x for x in w if issubclass(x.category, DeprecationWarning)]
-            assert len(deprecation_warnings) >= 1
-            assert "deprecated" in str(deprecation_warnings[0].message).lower()
-
-
-class TestMCPClientManagerStatus:
-    """Tests for status-related methods."""
-
-    def test_get_status_unknown_server(self) -> None:
-        """Test getting status of unknown server."""
-        manager = MCPClientManager()
-        status = manager.get_status("nonexistent")
-        assert status.name == "nonexistent"
-        assert status.state == ServerState.STOPPED
-
-    def test_get_all_statuses_empty(self) -> None:
-        """Test get_all_statuses with no servers."""
-        manager = MCPClientManager()
-        statuses = manager.get_all_statuses()
-        assert statuses == []
-
-    def test_get_server_unknown(self) -> None:
-        """Test getting unknown server returns None."""
-        manager = MCPClientManager()
-        server = manager.get_server("nonexistent")
-        assert server is None

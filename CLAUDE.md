@@ -173,7 +173,6 @@ def test_file_ops(tmp_sandbox: Path):
 | Workflow config | `src/mamba_agents/workflows/config.py` |
 | MCP client manager | `src/mamba_agents/mcp/client.py` |
 | MCP config | `src/mamba_agents/mcp/config.py` |
-| MCP lifecycle | `src/mamba_agents/mcp/lifecycle.py` |
 | MCP auth | `src/mamba_agents/mcp/auth.py` |
 | MCP env resolution | `src/mamba_agents/mcp/env.py` |
 | Test fixtures | `tests/conftest.py` |
@@ -226,7 +225,6 @@ def test_file_ops(tmp_sandbox: Path):
   - `MCPAuthConfig` handles API key auth via direct key or env var (`key_env` or `${VAR}` syntax)
   - `tool_prefix` avoids name conflicts when using multiple servers
   - `env_file` and `env_vars` configure environment for stdio servers (precedence: env_vars > env_file > system env)
-  - Deprecated: `connect_all()`, `disconnect_all()`, `get_toolsets()`, async context manager
 - Error recovery has 3 levels: conservative (1), balanced (2), aggressive (3)
 - **Workflows** provide orchestration patterns for multi-step agent execution:
   - `Workflow` is an ABC - extend it to create custom patterns (ReAct, Plan-Execute, Reflection)

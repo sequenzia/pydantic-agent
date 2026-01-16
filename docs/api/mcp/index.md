@@ -15,7 +15,7 @@ Model Context Protocol integration.
 from mamba_agents import Agent
 from mamba_agents.mcp import MCPClientManager, MCPServerConfig
 
-servers = [
+configs = [
     MCPServerConfig(
         name="filesystem",
         transport="stdio",
@@ -24,9 +24,9 @@ servers = [
     ),
 ]
 
-async with MCPClientManager(servers) as manager:
-    toolsets = manager.get_toolsets()
-    agent = Agent("gpt-4o", tools=toolsets)
+manager = MCPClientManager(configs)
+agent = Agent("gpt-4o", toolsets=manager.as_toolsets())
+result = await agent.run("List files")
 ```
 
 ## Imports

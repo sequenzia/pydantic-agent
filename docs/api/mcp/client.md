@@ -16,25 +16,28 @@ manager.add_server(MCPServerConfig(
     command="my-server",
 ))
 
-# Connect
-await manager.connect_all()
-
-# Get tools
-toolsets = manager.get_toolsets()
-
-# Check status
-status = manager.get_status("server1")
-
-# Disconnect
-await manager.disconnect_all()
+# Get toolsets for agent
+toolsets = manager.as_toolsets()
 ```
 
-## Context Manager
+## With Agent
 
 ```python
-async with MCPClientManager(servers) as manager:
-    toolsets = manager.get_toolsets()
-    # Auto-connects and disconnects
+from mamba_agents import Agent
+from mamba_agents.mcp import MCPClientManager, MCPServerConfig
+
+configs = [
+    MCPServerConfig(
+        name="filesystem",
+        transport="stdio",
+        command="npx",
+        args=["-y", "@modelcontextprotocol/server-filesystem", "/project"],
+    ),
+]
+
+manager = MCPClientManager(configs)
+agent = Agent("gpt-4o", toolsets=manager.as_toolsets())
+result = await agent.run("List project files")
 ```
 
 ## API Reference

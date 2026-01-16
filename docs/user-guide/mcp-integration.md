@@ -158,21 +158,6 @@ toolsets = manager.as_toolsets()
 agent = Agent("gpt-4o", toolsets=toolsets)
 ```
 
-### Server Status
-
-```python
-from mamba_agents.mcp.lifecycle import ServerState
-
-# Check individual server status
-status = manager.get_status("filesystem")
-print(f"State: {status.state}")  # ServerState.STOPPED, RUNNING, ERROR, etc.
-print(f"Error: {status.error}")  # Error message if state is ERROR
-
-# Check all servers
-for status in manager.get_all_statuses():
-    print(f"{status.name}: {status.state.value}")
-```
-
 ## Tool Prefixing
 
 Avoid name conflicts with tool prefixes:
@@ -323,23 +308,6 @@ try:
     toolsets = manager.as_toolsets()
 except ValueError as e:
     print(f"Invalid config: {e}")
-```
-
-## Migration from Deprecated API
-
-If you're using the deprecated async context manager pattern:
-
-```python
-# Old (deprecated)
-async with MCPClientManager(configs) as manager:
-    toolsets = manager.get_toolsets()
-    agent = Agent("gpt-4o", tools=toolsets)  # Wrong parameter!
-    ...
-
-# New (recommended)
-manager = MCPClientManager(configs)
-agent = Agent("gpt-4o", toolsets=manager.as_toolsets())  # Correct!
-result = await agent.run("Use the tools")
 ```
 
 ## Next Steps

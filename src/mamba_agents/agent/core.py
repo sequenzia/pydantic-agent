@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING, Any, Generic, TypeVar
 
 from pydantic_ai import Agent as PydanticAgent
 from pydantic_ai.models import Model
+from pydantic_ai.toolsets import AbstractToolset
 
 from mamba_agents.agent.config import AgentConfig
 from mamba_agents.agent.message_utils import dicts_to_model_messages, model_messages_to_dicts
@@ -70,6 +71,7 @@ class Agent(Generic[DepsT, OutputT]):
         model: str | Model | None = None,
         *,
         tools: Sequence[Callable[..., Any] | ToolDefinition] | None = None,
+        toolsets: Sequence[AbstractToolset[DepsT]] | None = None,
         system_prompt: str | TemplateConfig = "",
         deps_type: type[DepsT] | None = None,
         output_type: type[OutputT] | None = None,
@@ -83,6 +85,8 @@ class Agent(Generic[DepsT, OutputT]):
             model: Model to use (string identifier or Model instance).
                 If not provided, uses settings.model_backend configuration.
             tools: Optional list of tools to register.
+            toolsets: Optional list of toolsets (e.g., MCP servers) to use.
+                MCP servers should be passed here, not via tools parameter.
             system_prompt: System prompt for the agent. Can be a string or TemplateConfig.
             deps_type: Type of dependencies for tool calls.
             output_type: Expected output type.
@@ -135,6 +139,9 @@ class Agent(Generic[DepsT, OutputT]):
 
         if tools:
             agent_kwargs["tools"] = list(tools)
+
+        if toolsets:
+            agent_kwargs["toolsets"] = list(toolsets)
 
         if deps_type:
             agent_kwargs["deps_type"] = deps_type
@@ -202,6 +209,7 @@ class Agent(Generic[DepsT, OutputT]):
         settings: AgentSettings,
         *,
         tools: Sequence[Callable[..., Any] | ToolDefinition] | None = None,
+        toolsets: Sequence[AbstractToolset[DepsT]] | None = None,
         system_prompt: str = "",
         deps_type: type[DepsT] | None = None,
         output_type: type[OutputT] | None = None,
@@ -214,6 +222,7 @@ class Agent(Generic[DepsT, OutputT]):
         Args:
             settings: Agent settings to use.
             tools: Optional list of tools to register.
+            toolsets: Optional list of toolsets (e.g., MCP servers) to use.
             system_prompt: System prompt for the agent.
             deps_type: Type of dependencies for tool calls.
             output_type: Expected output type.
@@ -240,6 +249,7 @@ class Agent(Generic[DepsT, OutputT]):
         return cls(
             model,
             tools=tools,
+            toolsets=toolsets,
             system_prompt=system_prompt,
             deps_type=deps_type,
             output_type=output_type,

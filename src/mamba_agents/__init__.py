@@ -18,6 +18,7 @@ from mamba_agents.config.settings import AgentSettings
 from mamba_agents.context import ContextState
 from mamba_agents.context.compaction import CompactionResult
 from mamba_agents.context.config import CompactionConfig
+from mamba_agents.mcp import MCPAuthConfig, MCPClientManager, MCPServerConfig
 from mamba_agents.prompts import PromptConfig, PromptManager, PromptTemplate, TemplateConfig
 from mamba_agents.tokens.cost import CostBreakdown
 from mamba_agents.tokens.tracker import TokenUsage, UsageRecord
@@ -40,6 +41,10 @@ __all__ = [
     "CompactionConfig",
     "CompactionResult",
     "ContextState",
+    # MCP integration
+    "MCPAuthConfig",
+    "MCPClientManager",
+    "MCPServerConfig",
     # Prompt management
     "PromptConfig",
     "PromptManager",

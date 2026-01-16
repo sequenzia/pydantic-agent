@@ -81,6 +81,7 @@ class ServerLifecycleManager:
                 server = MCPServerStdio(
                     config.command,
                     args=config.args,
+                    tool_prefix=config.tool_prefix,
                 )
             elif config.transport == "sse":
                 if not config.url:
@@ -90,7 +91,7 @@ class ServerLifecycleManager:
                 if config.auth:
                     headers = build_auth_headers(config.auth)
 
-                server = MCPServerSSE(config.url, headers=headers)
+                server = MCPServerSSE(config.url, headers=headers, tool_prefix=config.tool_prefix)
             else:
                 raise ValueError(f"Unknown transport: {config.transport}")
 
